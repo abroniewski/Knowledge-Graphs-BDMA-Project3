@@ -1,0 +1,77 @@
+# references:
+    For examples of triples + visual representation:
+    https://docs.stardog.com/tutorials/rdf-graph-data-model
+
+
+
+:Paper rdf:type rdfs:Class
+
+#defines a property (edge) called inCollection that points from :Paper to :Journal
+#inference -> Paper, Journal, Collection, Other are classes
+#inference -> inCollection is a property
+:inCollection rdfs:domain :Paper
+:inCollection rdfs:range :Journal
+:inCollection rdfs:range :Collection
+:inCollection rdfs:range :Other
+#The above is the same as....?
+
+    :inCollection   rdfs:domain :Paper      ;
+                    rdfs:range :Journal     ;
+                    rdfs:range :Collection  ;
+                    rdfs:range :Other       .
+
+#defines a property (edge) called publishedIn that points from Paper, Journal, Collection and Other and goes to Year
+#inference -> Year is a class
+#TODO: Is this good or bad form, to have the same property used to connect different classes? In the original property graph we used a different name for published_in vs in_year
+:publishedIn rdfs:domain :Paper
+:publishedIn rdfs:domain :Journal
+:publishedIn rdfs:domain :Collection
+:publishedIn rdfs:domain :Other
+:publishedIn rdfs:range :Year
+
+#more details for year. We just include a label, no additional info.
+:Year rdfs:label xsd:integer
+
+#more details for Journals, Collections and Other
+#defines property called hasTopic pointing from Paper to Keyword
+#inference -> Keyword is a class
+:hasTopic rdfs:domain :Paper
+:hasTopic rdfs:range :Keyword
+
+#more details for keyword. Here we just add a human readable label
+:Keyword rdfs:label xsd:string
+
+#define property called reviewedBy pointing from Paper to ReviewGroup
+#inference -> ReviewGroup is a class
+:reviewedBy rdfs:domain Paper
+:reviewedBy rdfs:range ReviewGroup
+
+#define contributed (Author)
+#inference -> Author is class
+:contributed rdfs:domain :Author
+:contributed rdfs:range :Paper
+
+#define author info
+#name will be a string that is instantiated. No more meta definitions are required at schema level
+#inference -> Organization is a class
+:name rdfs:domain :Author
+:name rdfs:class xsd:string
+:affiliation rdfs:domain :Author
+:affiliation rdfs:range :Organization
+
+#define Paper
+#Journal, Collection and Other will use the same resource. Is this ok?
+#all of these things will have a title of type string.
+:title  rdfs:domain :Paper,
+                    :Journal,
+                    :Collection,
+                    :Other      ;
+        rdfs:range xsd:string   .
+
+#define review group info
+#TODO: How do we connect the decision and reviewText to a specific author that provided it?
+:inReviewGroup rdfs:domain :Author
+:inReviewGroup rdfs:range :ReviewGroup
+:decision rdfs:type rdf:value
+:reviewText rdf:type rdfs:literal
+
