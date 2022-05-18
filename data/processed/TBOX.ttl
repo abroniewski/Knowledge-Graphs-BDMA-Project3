@@ -1,0 +1,91 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://example.org/Author> a rdfs:Class .
+
+<http://example.org/Chair> a rdfs:Class .
+
+<http://example.org/Decision> a rdfs:Class .
+
+<http://example.org/Editor> a rdfs:Class .
+
+<http://example.org/Feedback> a rdfs:Class .
+
+<http://example.org/Keyword> a rdfs:Class .
+
+<http://example.org/Organization> a rdfs:Class .
+
+<http://example.org/Paper> a rdfs:Class .
+
+<http://example.org/Review> a rdfs:Class .
+
+<http://example.org/SubjectArea> a rdfs:Class .
+
+<http://example.org/Submission> a rdfs:Class .
+
+<http://example.org/Venue> a rdfs:Class .
+
+<http://example.org/Year> a rdfs:Class .
+
+<http://example.org/DemoPaper> rdfs:subClassOf <http://example.org/Paper> .
+
+<http://example.org/ExpertGroup> rdfs:subClassOf <http://example.org/Conference> .
+
+<http://example.org/FullPaper> rdfs:subClassOf <http://example.org/Paper> .
+
+<http://example.org/Poster> rdfs:subClassOf <http://example.org/Paper> .
+
+<http://example.org/RegularConference> rdfs:subClassOf <http://example.org/Conference> .
+
+<http://example.org/ShortPaper> rdfs:subClassOf <http://example.org/Paper> .
+
+<http://example.org/Symposium> rdfs:subClassOf <http://example.org/Conference> .
+
+<http://example.org/Workshop> rdfs:subClassOf <http://example.org/Conference> .
+
+<http://example.org/chairs> rdfs:domain <http://example.org/Chair> ;
+    rdfs:range <http://example.org/Conference> .
+
+<http://example.org/citedBy> rdfs:domain <http://example.org/Paper> ;
+    rdfs:range <http://example.org/Paper> .
+
+<http://example.org/commented> rdfs:domain <http://example.org/Review> ;
+    rdfs:range <http://example.org/Feedback> .
+
+<http://example.org/contains> rdfs:domain <http://example.org/Paper> ;
+    rdfs:range <http://example.org/Keyword> .
+
+<http://example.org/decided> rdfs:domain <http://example.org/Review> ;
+    rdfs:range <http://example.org/Decision> .
+
+<http://example.org/edits> rdfs:domain <http://example.org/Editor> ;
+    rdfs:range <http://example.org/Journal> .
+
+<http://example.org/partOf> rdfs:domain <http://example.org/Submission> ;
+    rdfs:range <http://example.org/Review> .
+
+<http://example.org/participatedIn> rdfs:domain <http://example.org/Author> ;
+    rdfs:range <http://example.org/Paper> .
+
+<http://example.org/publishedIn> rdfs:domain <http://example.org/Submission> ;
+    rdfs:range <http://example.org/Venue> .
+
+<http://example.org/relatedTo> rdfs:domain <http://example.org/Author>,
+        <http://example.org/Conference>,
+        <http://example.org/Journal>,
+        <http://example.org/Paper> ;
+    rdfs:range <http://example.org/Organization>,
+        <http://example.org/SubjectArea> .
+
+<http://example.org/reviewed> rdfs:domain <http://example.org/Author> ;
+    rdfs:range <http://example.org/Submission> .
+
+<http://example.org/submitted> rdfs:domain <http://example.org/Paper> ;
+    rdfs:range <http://example.org/Submission> .
+
+<http://example.org/when> rdfs:domain <http://example.org/Submission> ;
+    rdfs:range <http://example.org/Year> .
+
+<http://example.org/Journal> rdfs:subClassOf <http://example.org/Venue> .
+
+<http://example.org/Conference> rdfs:subClassOf <http://example.org/Venue> .
+
