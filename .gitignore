@@ -2,7 +2,7 @@
 *.class
 
 #data files
-data/**
+data/raw/dbpedia
 
 # Log file
 *.log
