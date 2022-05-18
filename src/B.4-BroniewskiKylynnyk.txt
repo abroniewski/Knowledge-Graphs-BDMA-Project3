@@ -1,0 +1,43 @@
+# Querying the ontology
+
+
+
+
+# 1. Find all Authors.
+@prefix :     <http://example.org/> .
+SELECT ?author
+WHERE
+{
+    ?author rdfs:class :Author .
+}
+
+
+# 2. Find all properties whose domain is Author.
+SELECT ?properties
+WHERE
+{
+    ?properties rdfs:domain :Author .
+}
+
+
+# 3. Find all properties whose domain is either Conference or Journal.
+SELECT ?properties
+WHERE
+{
+    {?properties    rdfs:domain :Conference}
+    UNION
+    {?properties    rdfs:domain :Journal}
+}
+
+
+# 4. Find all the papers written by a given author that where published in database conferences.
+SELECT ?author ?papers
+WHERE
+{
+    ?author     :participatedIn ?paper .
+    ?paper      :submitted      ?submission .
+    ?submission :publishedIn    ?venue .
+    ?venue      rdf:type        :Conference .   #this doesn't make sense?? Conference is a type of venue, not other way around
+    :Conference :relatedTo      ?subject .      #wrong too, conference is not an alias that can be related to from last line.
+    ?subject    rdfs:label      "database" .
+}
