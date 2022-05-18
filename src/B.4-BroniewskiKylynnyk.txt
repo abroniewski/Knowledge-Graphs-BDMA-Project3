@@ -47,9 +47,8 @@ WHERE
                 :participatedIn ?paper .
     ?submission rdf:type        :Submission ;
                 :publishedIn    ?venue .
-    ?venue      rdf:type        :Venue .
-    :Conference rdfs:subClassOf ?venue .        #this is backwards. I'm missing a link to get only the items of type "conference" in the venue.
-                :relatedTo      ?subject .      #wrong too, conference is not an alias that can be related to from last line?
+    ?venue      rdf:type        :Conference .
+                :relatedTo      ?subject .
     ?subject    rdf:type        :SubjectArea ;
                 rdfs:label      "database" .
 }
