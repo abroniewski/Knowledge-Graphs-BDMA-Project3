@@ -18,6 +18,9 @@ def create_TBOX():
     graph.bind("kg", KG)
 
     # Creating superclasses
+    graph.add((KG.Person, RDF.type, RDFS.Class))
+    graph.add((KG.Person, RDFS.label, Literal("Person")))
+
     graph.add((KG.Paper, RDF.type, RDFS.Class))
     graph.add((KG.Paper, RDFS.label, Literal("Paper")))
     graph.add((KG.Paper, RDFS.comment, Literal("To know if a paper is published or not, complete a query on the "
@@ -32,16 +35,16 @@ def create_TBOX():
     graph.add((KG.Venue, RDF.type, RDFS.Class))
     graph.add((KG.Venue, RDFS.label, Literal("Venue")))
 
-    graph.add((KG.Author, RDF.type, RDFS.Class))
+    graph.add((KG.Author, RDFS.subClassOf, KG.Person))
     graph.add((KG.Author, RDFS.label, Literal("Author")))
 
-    graph.add((KG.Reviewer, RDF.type, RDFS.Class))
+    graph.add((KG.Reviewer, RDFS.subClassOf, KG.Person))
     graph.add((KG.Reviewer, RDFS.label, Literal("Reviewer")))
 
-    graph.add((KG.Chair, RDF.type, RDFS.Class))
+    graph.add((KG.Chair, RDFS.subClassOf, KG.Person))
     graph.add((KG.Chair, RDFS.label, Literal("Chair")))
 
-    graph.add((KG.Editor, RDF.type, RDFS.Class))
+    graph.add((KG.Editor, RDFS.subClassOf, KG.Person))
     graph.add((KG.Editor, RDFS.label, Literal("Editor")))
 
     graph.add((KG.Proceeding, RDF.type, RDFS.Class))
@@ -81,22 +84,53 @@ def create_TBOX():
     graph.add((KG.RegularConference, RDFS.subClassOf, KG.Conference))
     graph.add((KG.RegularConference, RDFS.label, Literal("RegularConference")))
 
-
     #Creating properties
-    #TODO: Should the "duplicate" properties be sub-properties instead? Because of the queries we are doing,
-    # there does not look to be value in doing this.
-    graph.add((KG.relatedTo, RDFS.domain, KG.Paper))
-    graph.add((KG.relatedTo, RDFS.domain, KG.Conference))
-    graph.add((KG.relatedTo, RDFS.domain, KG.Journal))
-    graph.add((KG.relatedTo, RDFS.range, KG.SubjectArea))
-    graph.add((KG.relatedTo, RDFS.label, Literal("relatedTo")))
+    #Here we create properties that are all subProperties of relatedTo to make it possible to query all items related
+    # to a certain topic, or query items from Paper, Journal or Conference independently.
+    graph.add((KG.PaperRelatedTo, RDF.type, RDF.Property))
+    graph.add((KG.PaperRelatedTo, RDFS.domain, KG.Paper))
+    graph.add((KG.PaperRelatedTo, RDFS.range, KG.SubjectArea))
+    graph.add((KG.PaperRelatedTo, RDFS.subPropertyOf, KG.relatedTo))
+    graph.add((KG.PaperRelatedTo, RDFS.label, Literal("Paper related to")))
 
-    graph.add((KG.title, RDFS.domain, KG.Paper))
-    graph.add((KG.title, RDFS.domain, KG.Journal))
-    graph.add((KG.title, RDFS.domain, KG.Conference))
+    graph.add((KG.ConferenceRelatedTo, RDF.type, RDF.Property))
+    graph.add((KG.ConferenceRelatedTo, RDFS.domain, KG.Conference))
+    graph.add((KG.ConferenceRelatedTo, RDFS.range, KG.SubjectArea))
+    graph.add((KG.ConferenceRelatedTo, RDFS.subPropertyOf, KG.relatedTo))
+    graph.add((KG.ConferenceRelatedTo, RDFS.label, Literal("Conference related to")))
+
+    graph.add((KG.JournalRelatedTo, RDF.type, RDF.Property))
+    graph.add((KG.JournalRelatedTo, RDFS.domain, KG.Journal))
+    graph.add((KG.JournalRelatedTo, RDFS.range, KG.SubjectArea))
+    graph.add((KG.JournalRelatedTo, RDFS.subPropertyOf, KG.relatedTo))
+    graph.add((KG.JournalRelatedTo, RDFS.label, Literal("Journal related to")))
+
+    graph.add((KG.relatedTo, RDFS.range, KG.SubjectArea))
+    graph.add((KG.relatedTo, RDFS.label, Literal("related to")))
+
+    #all title are subproperties of KG:title, allowing for flexible querying.
+    graph.add((KG.paperTitle, RDF.type, RDF.Property))
+    graph.add((KG.paperTitle, RDFS.domain, KG.Paper))
+    graph.add((KG.paperTitle, RDFS.range, XSD.string))
+    graph.add((KG.paperTitle, RDFS.subPropertyOf, KG.title))
+    graph.add((KG.paperTitle, RDFS.label, Literal("title of a Paper")))
+
+    graph.add((KG.journalTitle, RDF.type, RDF.Property))
+    graph.add((KG.journalTitle, RDFS.domain, KG.Journal))
+    graph.add((KG.journalTitle, RDFS.range, XSD.string))
+    graph.add((KG.journalTitle, RDFS.subPropertyOf, KG.title))
+    graph.add((KG.journalTitle, RDFS.label, Literal("title of a Journal")))
+
+    graph.add((KG.conferenceTitle, RDF.type, RDF.Property))
+    graph.add((KG.conferenceTitle, RDFS.domain, KG.Conference))
+    graph.add((KG.conferenceTitle, RDFS.range, XSD.string))
+    graph.add((KG.conferenceTitle, RDFS.subPropertyOf, KG.title))
+    graph.add((KG.conferenceTitle, RDFS.label, Literal("title of a Conference")))
 
     graph.add((KG.title, RDF.type, RDF.Property))
     graph.add((KG.title, RDFS.label, Literal("title")))
+    graph.add((KG.title, RDFS.comment, Literal("this is a super-property that can be used to query all items that "
+                                                  "have a title")))
     graph.add((KG.title, RDFS.range, XSD.string))
 
     graph.add((KG.submitted, RDFS.domain, KG.Paper))
@@ -111,33 +145,32 @@ def create_TBOX():
     graph.add((KG.participatedIn, RDFS.range, KG.Paper))
     graph.add((KG.participatedIn, RDFS.label, Literal("participatedIn")))
 
-    #TODO: If I have a repeating property like this, does it suggest I should have a super classe (Person?). Should I
-    # be setting the domain for name like this at the schematic level, or should this be done when instantiating?
-    graph.add((KG.name, RDFS.domain, KG.Author))
-    graph.add((KG.name, RDFS.domain, KG.Reviewer))
-    graph.add((KG.name, RDFS.domain, KG.Editor))
-    graph.add((KG.name, RDFS.domain, KG.Chair))
-
+    #We made all of the different types of people a subClassOf :Person so that we could associate the property :name
+    # with only a single class instead of repeating it like we did with the SubjectArea
     graph.add((KG.name, RDF.type, RDF.Property))
-    graph.add((KG.name, RDFS.label, Literal("name")))
+    graph.add((KG.name, RDFS.domain, KG.Person))
     graph.add((KG.name, RDFS.range, XSD.string))
+    graph.add((KG.name, RDFS.label, Literal("name")))
 
     graph.add((KG.publishedIn, RDFS.domain, KG.Submission))
     graph.add((KG.publishedIn, RDFS.range, KG.Venue))
     graph.add((KG.publishedIn, RDFS.label, Literal("publishedIn")))
 
+    #TODO: fix the double domain
     graph.add((KG.published, RDFS.domain, KG.Conference))
     graph.add((KG.published, RDFS.range, KG.Proceeding))
     graph.add((KG.published, RDFS.domain, KG.Journal))
     graph.add((KG.published, RDFS.range, KG.Volume))
     graph.add((KG.published, RDFS.label, Literal("published")))
 
+    #TODO: fix the double domain
     graph.add((KG.handledBy, RDFS.domain, KG.Conference))
     graph.add((KG.handledBy, RDFS.range, KG.Chair))
     graph.add((KG.handledBy, RDFS.domain, KG.Journal))
     graph.add((KG.handledBy, RDFS.range, KG.Editor))
     graph.add((KG.handledBy, RDFS.label, Literal("handledBy")))
 
+    #TODO: fix the double domain
     graph.add((KG.assigned, RDFS.domain, KG.Editor))
     graph.add((KG.assigned, RDFS.domain, KG.Chair))
     graph.add((KG.assigned, RDFS.range, KG.Reviewer))
