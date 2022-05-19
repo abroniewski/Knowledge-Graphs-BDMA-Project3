@@ -1,91 +1,151 @@
+@prefix kg: <http://KG-SDM-Lab3.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://example.org/Author> a rdfs:Class .
+kg:Author a rdfs:Class ;
+    rdfs:label "Author" .
 
-<http://example.org/Chair> a rdfs:Class .
+kg:Chair a rdfs:Class ;
+    rdfs:label "Chair" .
 
-<http://example.org/Decision> a rdfs:Class .
+kg:Editor a rdfs:Class ;
+    rdfs:label "Editor" .
 
-<http://example.org/Editor> a rdfs:Class .
+kg:Paper a rdfs:Class ;
+    rdfs:label "Paper" ;
+    rdfs:comment "To know if a paper is published or not, complete a query on the Decision of a paper. If Decision is True, the paper is published." .
 
-<http://example.org/Feedback> a rdfs:Class .
+kg:Proceeding a rdfs:Class ;
+    rdfs:label "Proceeding" .
 
-<http://example.org/Keyword> a rdfs:Class .
+kg:Reviewer a rdfs:Class ;
+    rdfs:label "Reviewer" .
 
-<http://example.org/Organization> a rdfs:Class .
+kg:SubjectArea a rdfs:Class ;
+    rdfs:label "SubjectArea" .
 
-<http://example.org/Paper> a rdfs:Class .
+kg:Submission a rdfs:Class ;
+    rdfs:label "Submission" .
 
-<http://example.org/Review> a rdfs:Class .
+kg:Venue a rdfs:Class ;
+    rdfs:label "Venue" .
 
-<http://example.org/SubjectArea> a rdfs:Class .
+kg:Volume a rdfs:Class ;
+    rdfs:label "Volume" .
 
-<http://example.org/Submission> a rdfs:Class .
+kg:DemoPaper rdfs:label "DemoPaper" ;
+    rdfs:subClassOf kg:Paper .
 
-<http://example.org/Venue> a rdfs:Class .
+kg:ExpertGroup rdfs:label "ExpertGroup" ;
+    rdfs:subClassOf kg:Conference .
 
-<http://example.org/Year> a rdfs:Class .
+kg:FullPaper rdfs:label "FullPaper" ;
+    rdfs:subClassOf kg:Paper .
 
-<http://example.org/DemoPaper> rdfs:subClassOf <http://example.org/Paper> .
+kg:Poster rdfs:label "Poster" ;
+    rdfs:subClassOf kg:Paper .
 
-<http://example.org/ExpertGroup> rdfs:subClassOf <http://example.org/Conference> .
+kg:RegularConference rdfs:label "RegularConference" ;
+    rdfs:subClassOf kg:Conference .
 
-<http://example.org/FullPaper> rdfs:subClassOf <http://example.org/Paper> .
+kg:ShortPaper rdfs:label "ShortPaper" ;
+    rdfs:subClassOf kg:Paper .
 
-<http://example.org/Poster> rdfs:subClassOf <http://example.org/Paper> .
+kg:Symposium rdfs:label "Symposium" ;
+    rdfs:subClassOf kg:Conference .
 
-<http://example.org/RegularConference> rdfs:subClassOf <http://example.org/Conference> .
+kg:Workshop rdfs:label "Workshop" ;
+    rdfs:subClassOf kg:Conference .
 
-<http://example.org/ShortPaper> rdfs:subClassOf <http://example.org/Paper> .
+kg:affiliatedTo rdfs:label "affiliatedTo" ;
+    rdfs:domain kg:Author ;
+    rdfs:range kg:Organization .
 
-<http://example.org/Symposium> rdfs:subClassOf <http://example.org/Conference> .
+kg:assigned rdfs:label "assigned" ;
+    rdfs:comment "Each class assigning a reviewer should assign at least 2 reviewers" ;
+    rdfs:domain kg:Chair,
+        kg:Editor ;
+    rdfs:range kg:Reviewer .
 
-<http://example.org/Workshop> rdfs:subClassOf <http://example.org/Conference> .
+kg:chairs rdfs:label "chairs" ;
+    rdfs:domain kg:Chair ;
+    rdfs:range kg:Conference .
 
-<http://example.org/chairs> rdfs:domain <http://example.org/Chair> ;
-    rdfs:range <http://example.org/Conference> .
+kg:commented rdfs:label "commented" ;
+    rdfs:comment "The string provides all the commentary available as part of the review" ;
+    rdfs:domain kg:Review ;
+    rdfs:range xsd:string .
 
-<http://example.org/citedBy> rdfs:domain <http://example.org/Paper> ;
-    rdfs:range <http://example.org/Paper> .
+kg:contains rdfs:label "contains" ;
+    rdfs:domain kg:Paper ;
+    rdfs:range kg:Keyword .
 
-<http://example.org/commented> rdfs:domain <http://example.org/Review> ;
-    rdfs:range <http://example.org/Feedback> .
+kg:decided rdfs:label "decided" ;
+    rdfs:comment "The decision is a boolean where True means the paper is accepted and False means the paper is rejected" ;
+    rdfs:domain kg:Review ;
+    rdfs:range xsd:boolean .
 
-<http://example.org/contains> rdfs:domain <http://example.org/Paper> ;
-    rdfs:range <http://example.org/Keyword> .
+kg:edits rdfs:label "edits" ;
+    rdfs:domain kg:Editor ;
+    rdfs:range kg:Journal .
 
-<http://example.org/decided> rdfs:domain <http://example.org/Review> ;
-    rdfs:range <http://example.org/Decision> .
+kg:handledBy rdfs:label "handledBy" ;
+    rdfs:domain kg:Conference,
+        kg:Journal ;
+    rdfs:range kg:Chair,
+        kg:Editor .
 
-<http://example.org/edits> rdfs:domain <http://example.org/Editor> ;
-    rdfs:range <http://example.org/Journal> .
+kg:name a rdf:Property ;
+    rdfs:label "name" ;
+    rdfs:domain kg:Author,
+        kg:Chair,
+        kg:Editor,
+        kg:Reviewer ;
+    rdfs:range xsd:string .
 
-<http://example.org/partOf> rdfs:domain <http://example.org/Submission> ;
-    rdfs:range <http://example.org/Review> .
+kg:partOf rdfs:label "partOf" ;
+    rdfs:domain kg:Submission ;
+    rdfs:range kg:Review .
 
-<http://example.org/participatedIn> rdfs:domain <http://example.org/Author> ;
-    rdfs:range <http://example.org/Paper> .
+kg:participatedIn rdfs:label "participatedIn" ;
+    rdfs:domain kg:Author ;
+    rdfs:range kg:Paper .
 
-<http://example.org/publishedIn> rdfs:domain <http://example.org/Submission> ;
-    rdfs:range <http://example.org/Venue> .
+kg:published rdfs:label "published" ;
+    rdfs:domain kg:Conference,
+        kg:Journal ;
+    rdfs:range kg:Proceeding,
+        kg:Volume .
 
-<http://example.org/relatedTo> rdfs:domain <http://example.org/Author>,
-        <http://example.org/Conference>,
-        <http://example.org/Journal>,
-        <http://example.org/Paper> ;
-    rdfs:range <http://example.org/Organization>,
-        <http://example.org/SubjectArea> .
+kg:publishedIn rdfs:label "publishedIn" ;
+    rdfs:domain kg:Submission ;
+    rdfs:range kg:Venue .
 
-<http://example.org/reviewed> rdfs:domain <http://example.org/Author> ;
-    rdfs:range <http://example.org/Submission> .
+kg:relatedTo rdfs:label "relatedTo" ;
+    rdfs:domain kg:Conference,
+        kg:Journal,
+        kg:Paper ;
+    rdfs:range kg:SubjectArea .
 
-<http://example.org/submitted> rdfs:domain <http://example.org/Paper> ;
-    rdfs:range <http://example.org/Submission> .
+kg:reviewed rdfs:label "reviewed" ;
+    rdfs:domain kg:Reviewer ;
+    rdfs:range kg:Submission .
 
-<http://example.org/when> rdfs:domain <http://example.org/Submission> ;
-    rdfs:range <http://example.org/Year> .
+kg:submitted rdfs:label "submitted" ;
+    rdfs:domain kg:Paper ;
+    rdfs:range kg:Submission .
 
-<http://example.org/Journal> rdfs:subClassOf <http://example.org/Venue> .
+kg:title a rdf:Property ;
+    rdfs:label "title" ;
+    rdfs:domain kg:Conference,
+        kg:Journal,
+        kg:Paper ;
+    rdfs:range xsd:string .
 
-<http://example.org/Conference> rdfs:subClassOf <http://example.org/Venue> .
+kg:Journal rdfs:label "Journal" ;
+    rdfs:subClassOf kg:Venue .
+
+kg:Conference rdfs:label "Conference" ;
+    rdfs:subClassOf kg:Venue .
 
