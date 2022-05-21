@@ -17,28 +17,26 @@ g = Graph()
 
 # In[168]:
 
-
 #upload a csv file with instances 
-Author = pd.read_csv('/home/vladka/Downloads/output/Authors.csv') 
-Papers = pd.read_csv('/home/vladka/Downloads/output/Papers.csv') 
-Author_by = pd.read_csv('/home/vladka/Downloads/output/Authored_by.csv')
-Affiliations = pd.read_csv('/home/vladka/Downloads/output/Affiliations.csv')
-CEditions = pd.read_csv('/home/vladka/Downloads/output/CEditions.csv')
-Citations = pd.read_csv('/home/vladka/Downloads/output/Citations.csv')
-Conferences = pd.read_csv('/home/vladka/Downloads/output/Conferences.csv')
-Journals = pd.read_csv('/home/vladka/Downloads/output/Journals.csv')
-JVolumes = pd.read_csv('/home/vladka/Downloads/output/JVolumes.csv')
-Keyword_paper = pd.read_csv('/home/vladka/Downloads/output/Keyword_paper.csv')
-Keywords = pd.read_csv('/home/vladka/Downloads/output/Keywords.csv')
-Organizations = pd.read_csv('/home/vladka/Downloads/output/Organizations.csv')
-Reviews = pd.read_csv('/home/vladka/Downloads/output/Reviews.csv')
+Author = pd.read_csv('../data/raw/publication-data/Authors.csv')
+Papers = pd.read_csv('../data/raw/publication-data/Papers.csv')
+Author_by = pd.read_csv('../data/raw/publication-data/Authored_by.csv')
+Affiliations = pd.read_csv('../data/raw/publication-data/Affiliations.csv')
+CEditions = pd.read_csv('../data/raw/publication-data/CEditions.csv')
+Citations = pd.read_csv('../data/raw/publication-data/Citations.csv')
+Conferences = pd.read_csv('../data/raw/publication-data/Conferences.csv')
+Journals = pd.read_csv('../data/raw/publication-data/Journals.csv')
+JVolumes = pd.read_csv('../data/raw/publication-data/JVolumes.csv')
+Keyword_paper = pd.read_csv('../data/raw/publication-data/Keyword_paper.csv')
+Keywords = pd.read_csv('../data/raw/publication-data/Keywords.csv')
+Organizations = pd.read_csv('../data/raw/publication-data/Organizations.csv')
+Reviews = pd.read_csv('../data/raw/publication-data/Reviews.csv')
 
 
 # In[90]:
 
-
-Author_Papers = (Author.set_index('id').join(Author_by.set_index('idA'))).set_index('idP').join(Papers.set_index('id')).reset_index()
-
+Author.rename(columns={"id": "idA"}, inplace=True)
+Author_Papers = Author.join(Author_by.set_index('idA'), on="idA").join(Papers.set_index('id'), on="idP")
 
 # In[184]:
 
@@ -120,11 +118,11 @@ g.bind("kg", KG)
 #  2 - adding the Papers as resources
 #  3 - connecting the Authors to their Papers
 for k in range(len(Author_Papers['name'])):
-    g.add((Author_Papers['name'][k], RDF.type, KG.Author))  # this creates the resource "name" as a type of Author
-    g.add((Author_Papers['title'][k], RDF.type, KG.Paper))  # this creates the resource "title" as a type of Paper
-    g.add((Author_Papers['name'][k], KG.participatedIn, Author_Papers['title'][k]))  # creates link between paper/name
-    g.add((Author_Papers['title'][k], KG.title, Literal(Author_Papers['title'][k])))  # adds human-readable string
-    g.add((Author_Papers['name'][k], KG.name, Literal(Author_Papers['name'][k])))  # adds human-readable string
+    g.add((Author_Papers['idA'][k], RDF.type, KG.Author))  # this creates "name" as a type of Author
+    g.add((Author_Papers['idP'][k], RDF.type, KG.Paper))  # this creates "title" as a type of Paper
+    g.add((Author_Papers['idA'][k], KG.participatedIn, Author_Papers['idP'][k]))  # creates link between paper/name
+    g.add((Author_Papers['idP'][k], KG.title, Literal(Author_Papers['title'][k])))  # adds human-readable string
+    g.add((Author_Papers['idA'][k], KG.name, Literal(Author_Papers['name'][k])))  # adds human-readable string
 
 
 g.add((KG.Paper, KG.PaperRelatedTo, KG.SubjectArea))
@@ -176,7 +174,7 @@ g.add((Literal(Editor_Chair['name'][k]), KG.reviewed, Literal(int(Editor_Chair['
 # In[204]:
 
 
-g
+g.serialize(destination=f'../data/processed/ABOX.ttl')
 
 
 # In[ ]:
