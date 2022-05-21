@@ -3,6 +3,7 @@
 
 #data files
 data/raw/dbpedia
+data/raw/publication-data
 
 # Log file
 *.log
