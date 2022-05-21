@@ -82,7 +82,7 @@ Paper_volume.head()
 
 # In[196]:
 
-
+Author.rename(columns={"id": "idA"}, inplace=True)
 Review_Papers = Reviews.set_index('idA').join(Author.set_index('id')).set_index('idP').join(Papers.set_index('id')).reset_index()
 
 
@@ -112,11 +112,7 @@ Editor_Chair.head()
 KG = Namespace("http://KG-SDM-Lab3.org/")
 g.bind("kg", KG)
 
-# TODO: this function will create a new instance of Paper for every author that participated in a paper, and I don't
-#  think they would be linked to the same paper. I'd suggest we create as separate function for:
-#  1 - adding all of the Authors as resources
-#  2 - adding the Papers as resources
-#  3 - connecting the Authors to their Papers
+
 for k in range(len(Author_Papers['name'])):
     g.add((Author_Papers['idA'][k], RDF.type, KG.Author))  # this creates "name" as a type of Author
     g.add((Author_Papers['idP'][k], RDF.type, KG.Paper))  # this creates "title" as a type of Paper
