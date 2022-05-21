@@ -1,38 +1,42 @@
+from rdflib import Graph, Literal, RDF, URIRef
+# rdflib knows about quite a few popular namespaces, like W3C ontologies, schema.org etc.
+from rdflib.namespace import FOAF , XSD
 
-from rdflib import Graph
-from rdflib.namespace import RDFS, RDF
-from rdflib import Namespace
-from rdflib import URIRef, Literal
+# Create a Graph
+g = Graph()
 
-# TODO: complete TBOX creation with all properties from lab scope
+# Create an RDF URI node to use as the subject for multiple triples
+donna = URIRef("http://example.org/donna")
 
+# Add triples using store's add() method.
+g.add((donna, RDF.type, FOAF.Person))
+g.add((donna, FOAF.nick, Literal("donna", lang="en")))
+g.add((donna, FOAF.name, Literal("Donna Fales")))
+g.add((donna, FOAF.mbox, URIRef("mailto:donna@example.org")))
 
-# TODO: create graph using existing turtle doc
-def create_TBOX():
-    """
+# Add another person
+ed = URIRef("http://example.org/edward")
 
-    :return: returns a TBOX graph with schema created
-    """
-    g = Graph()
-    Paper = URIRef("http://example.org/Paper")
+# Add triples using store's add() method.
+g.add((ed, RDF.type, FOAF.Person))
+g.add((ed, FOAF.nick, Literal("ed", datatype=XSD.string)))
+g.add((ed, FOAF.name, Literal("Edward Scissorhands")))
+g.add((ed, FOAF.mbox, Literal("e.scissorhands@example.org", datatype=XSD.anyURI)))
 
-    g.add((Paper, RDF.type, RDFS.Class))
-    g.serialize(destination="../data/processed/tbl.ttl")
+# Iterate over triples in store and print them out.
+print("--- printing raw triples ---")
+for s, p, o in g:
+    print((s, p, o))
 
-create_TBOX()
+# For each foaf:Person in the store, print out their mbox property's value.
+print("--- printing mboxes ---")
+for person in g.subjects(RDF.type, FOAF.Person):
+    for mbox in g.objects(person, FOAF.mbox):
+        print(mbox)
 
-# TODO: create script to reformat existing CSV files into turtle format, export to turtle doc
+# Bind the FOAF namespace to a prefix for more readable output
+g.bind("foaf", FOAF)
 
-# TODO: complete ABOX creation so that files can be imported to GraphDB
-
-# TODO: create code that links ABOX and TBOX
-
-# TODO: import turtle doc (ABOX and TBOX) into graphDB
-
-# TODO: complete queries
-
-# TODO: write SPARQL queries
-# 1. Find all Authors.
-# 2. Find all properties whose domain is Author.
-# 3. Find all properties whose domain is either Conference or Journal.
-# 4. Find all the papers written by a given author that where published in database confer- ences.
+# print all the data in the Notation3 format
+print("--- printing mboxes ---")
+print(g.serialize(format='n3'))

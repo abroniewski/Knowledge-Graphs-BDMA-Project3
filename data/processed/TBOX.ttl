@@ -3,15 +3,15 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+kg:Collection a rdfs:Class ;
+    rdfs:label "Collection" .
+
 kg:Paper a rdfs:Class ;
     rdfs:label "Paper" ;
     rdfs:comment "To know if a paper is published or not, complete a query on the Decision of a paper. If Decision is True, the paper is published." .
 
 kg:Person a rdfs:Class ;
     rdfs:label "Person" .
-
-kg:Proceeding a rdfs:Class ;
-    rdfs:label "Proceeding" .
 
 kg:SubjectArea a rdfs:Class ;
     rdfs:label "SubjectArea" .
@@ -22,15 +22,6 @@ kg:Submission a rdfs:Class ;
 kg:Venue a rdfs:Class ;
     rdfs:label "Venue" .
 
-kg:Volume a rdfs:Class ;
-    rdfs:label "Volume" .
-
-kg:ConferenceRelatedTo a rdf:Property ;
-    rdfs:label "Conference related to" ;
-    rdfs:domain kg:Conference ;
-    rdfs:range kg:SubjectArea ;
-    rdfs:subPropertyOf kg:relatedTo .
-
 kg:DemoPaper rdfs:label "DemoPaper" ;
     rdfs:subClassOf kg:Paper .
 
@@ -40,20 +31,11 @@ kg:ExpertGroup rdfs:label "ExpertGroup" ;
 kg:FullPaper rdfs:label "FullPaper" ;
     rdfs:subClassOf kg:Paper .
 
-kg:JournalRelatedTo a rdf:Property ;
-    rdfs:label "Journal related to" ;
-    rdfs:domain kg:Journal ;
-    rdfs:range kg:SubjectArea ;
-    rdfs:subPropertyOf kg:relatedTo .
-
-kg:PaperRelatedTo a rdf:Property ;
-    rdfs:label "Paper related to" ;
-    rdfs:domain kg:Paper ;
-    rdfs:range kg:SubjectArea ;
-    rdfs:subPropertyOf kg:relatedTo .
-
 kg:Poster rdfs:label "Poster" ;
     rdfs:subClassOf kg:Paper .
+
+kg:Proceeding rdfs:label "Proceeding" ;
+    rdfs:subClassOf kg:Collection .
 
 kg:RegularConference rdfs:label "RegularConference" ;
     rdfs:subClassOf kg:Conference .
@@ -64,26 +46,34 @@ kg:ShortPaper rdfs:label "ShortPaper" ;
 kg:Symposium rdfs:label "Symposium" ;
     rdfs:subClassOf kg:Conference .
 
+kg:Volume rdfs:label "Volume" ;
+    rdfs:subClassOf kg:Collection .
+
 kg:Workshop rdfs:label "Workshop" ;
     rdfs:subClassOf kg:Conference .
 
-kg:affiliatedTo rdfs:label "affiliatedTo" ;
-    rdfs:domain kg:Author ;
-    rdfs:range kg:Organization .
-
 kg:assigned rdfs:label "assigned" ;
     rdfs:comment "Each class assigning a reviewer should assign at least 2 reviewers" ;
-    rdfs:domain kg:Chair,
-        kg:Editor ;
+    rdfs:domain kg:Leader ;
     rdfs:range kg:Reviewer .
+
+kg:chairedBy rdfs:label "chairedBy" ;
+    rdfs:domain kg:Conference ;
+    rdfs:range kg:Chair .
 
 kg:chairs rdfs:label "chairs" ;
     rdfs:domain kg:Chair ;
     rdfs:range kg:Conference .
 
+kg:collectionRelatedTo a rdf:Property ;
+    rdfs:label "Collection related to" ;
+    rdfs:domain kg:Collection ;
+    rdfs:range kg:SubjectArea ;
+    rdfs:subPropertyOf kg:relatedTo .
+
 kg:commented rdfs:label "commented" ;
     rdfs:comment "The string provides all the commentary available as part of the review" ;
-    rdfs:domain kg:Review ;
+    rdfs:domain kg:Reviewer ;
     rdfs:range xsd:string .
 
 kg:conferenceTitle a rdf:Property ;
@@ -92,24 +82,18 @@ kg:conferenceTitle a rdf:Property ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf kg:title .
 
-kg:contains rdfs:label "contains" ;
-    rdfs:domain kg:Paper ;
-    rdfs:range kg:Keyword .
-
 kg:decided rdfs:label "decided" ;
     rdfs:comment "The decision is a boolean where True means the paper is accepted and False means the paper is rejected" ;
-    rdfs:domain kg:Review ;
+    rdfs:domain kg:Reviewer ;
     rdfs:range xsd:boolean .
+
+kg:editedBy rdfs:label "editedBy" ;
+    rdfs:domain kg:Journal ;
+    rdfs:range kg:Editor .
 
 kg:edits rdfs:label "edits" ;
     rdfs:domain kg:Editor ;
     rdfs:range kg:Journal .
-
-kg:handledBy rdfs:label "handledBy" ;
-    rdfs:domain kg:Conference,
-        kg:Journal ;
-    rdfs:range kg:Chair,
-        kg:Editor .
 
 kg:journalTitle a rdf:Property ;
     rdfs:label "title of a Journal" ;
@@ -119,8 +103,15 @@ kg:journalTitle a rdf:Property ;
 
 kg:name a rdf:Property ;
     rdfs:label "name" ;
+    rdfs:comment "The name of any person." ;
     rdfs:domain kg:Person ;
     rdfs:range xsd:string .
+
+kg:paperRelatedTo a rdf:Property ;
+    rdfs:label "Paper related to" ;
+    rdfs:domain kg:Paper ;
+    rdfs:range kg:SubjectArea ;
+    rdfs:subPropertyOf kg:relatedTo .
 
 kg:paperTitle a rdf:Property ;
     rdfs:label "title of a Paper" ;
@@ -128,19 +119,13 @@ kg:paperTitle a rdf:Property ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf kg:title .
 
-kg:partOf rdfs:label "partOf" ;
-    rdfs:domain kg:Submission ;
-    rdfs:range kg:Review .
-
 kg:participatedIn rdfs:label "participatedIn" ;
     rdfs:domain kg:Author ;
     rdfs:range kg:Paper .
 
 kg:published rdfs:label "published" ;
-    rdfs:domain kg:Conference,
-        kg:Journal ;
-    rdfs:range kg:Proceeding,
-        kg:Volume .
+    rdfs:domain kg:Venue ;
+    rdfs:range kg:Collection .
 
 kg:publishedIn rdfs:label "publishedIn" ;
     rdfs:domain kg:Submission ;
@@ -157,25 +142,28 @@ kg:submitted rdfs:label "submitted" ;
 kg:Author rdfs:label "Author" ;
     rdfs:subClassOf kg:Person .
 
-kg:Reviewer rdfs:label "Reviewer" ;
-    rdfs:subClassOf kg:Person .
-
 kg:Chair rdfs:label "Chair" ;
-    rdfs:subClassOf kg:Person .
+    rdfs:subClassOf kg:Leader .
 
 kg:Editor rdfs:label "Editor" ;
-    rdfs:subClassOf kg:Person .
+    rdfs:subClassOf kg:Leader .
 
 kg:relatedTo rdfs:label "related to" ;
     rdfs:range kg:SubjectArea .
 
-kg:title a rdf:Property ;
-    rdfs:label "title" ;
-    rdfs:comment "this is a super-property that can be used to query all items that have a title" ;
-    rdfs:range xsd:string .
-
 kg:Journal rdfs:label "Journal" ;
     rdfs:subClassOf kg:Venue .
+
+kg:Leader rdfs:label "Leader" ;
+    rdfs:subClassOf kg:Person .
+
+kg:title a rdf:Property ;
+    rdfs:label "title" ;
+    rdfs:comment "The title of any entity" ;
+    rdfs:range xsd:string .
+
+kg:Reviewer rdfs:label "Reviewer" ;
+    rdfs:subClassOf kg:Person .
 
 kg:Conference rdfs:label "Conference" ;
     rdfs:subClassOf kg:Venue .

@@ -1,9 +1,0 @@
-using python RDFlib
-setup functions to read turtle doc and create graph
-if sample turtle doc correct, format dataset to create large scale turtle fill with all data
-load full dataset
-
-TODO:
-Adam - send email to prof asking about pietro data
-Vlada - send Adam dataset from lab1
-
