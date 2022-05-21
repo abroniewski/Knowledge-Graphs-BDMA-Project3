@@ -1,8 +1,5 @@
 # Querying the ontology
 
-
-
-
 # 1. Find all Authors.
 @prefix :     <http://example.org/> .
 SELECT ?author

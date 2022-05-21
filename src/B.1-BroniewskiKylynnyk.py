@@ -18,8 +18,6 @@ def create_TBOX():
     graph.bind("kg", KG)
 
     # Creating superclasses
-    graph.add((KG.Person, RDF.type, RDFS.Class))
-    graph.add((KG.Person, RDFS.label, Literal("Person")))
 
     graph.add((KG.Paper, RDF.type, RDFS.Class))
     graph.add((KG.Paper, RDFS.label, Literal("Paper")))
@@ -35,17 +33,32 @@ def create_TBOX():
     graph.add((KG.Venue, RDF.type, RDFS.Class))
     graph.add((KG.Venue, RDFS.label, Literal("Venue")))
 
+    graph.add((KG.Person, RDF.type, RDFS.Class))
+    graph.add((KG.Person, RDFS.label, Literal("Person")))
+
     graph.add((KG.Author, RDFS.subClassOf, KG.Person))
     graph.add((KG.Author, RDFS.label, Literal("Author")))
 
     graph.add((KG.Reviewer, RDFS.subClassOf, KG.Person))
     graph.add((KG.Reviewer, RDFS.label, Literal("Reviewer")))
 
-    graph.add((KG.Chair, RDFS.subClassOf, KG.Person))
+    #Create Leader superclass to remove redundency in assigning reviewer property. It also makes it possible to query
+    # and all of the editors and chairs together.
+    graph.add((KG.Leader, RDFS.subClassOf, KG.Person))
+    graph.add((KG.Leader, RDFS.label, Literal("Leader")))
+
+    graph.add((KG.Chair, RDFS.subClassOf, KG.Leader))
     graph.add((KG.Chair, RDFS.label, Literal("Chair")))
 
-    graph.add((KG.Editor, RDFS.subClassOf, KG.Person))
+    graph.add((KG.Editor, RDFS.subClassOf, KG.Leader))
     graph.add((KG.Editor, RDFS.label, Literal("Editor")))
+
+    #We made all of the different types of people a subClassOf :Person so that we could associate the property :name
+    # with only a single class instead of repeating it like we did with the SubjectArea
+    graph.add((KG.name, RDF.type, RDF.Property))
+    graph.add((KG.name, RDFS.domain, KG.Person))
+    graph.add((KG.name, RDFS.range, XSD.string))
+    graph.add((KG.name, RDFS.label, Literal("name")))
 
     graph.add((KG.Proceeding, RDF.type, RDFS.Class))
     graph.add((KG.Proceeding, RDFS.label, Literal("Proceeding")))
@@ -85,6 +98,10 @@ def create_TBOX():
     graph.add((KG.RegularConference, RDFS.label, Literal("RegularConference")))
 
     #Creating properties
+
+    graph.add((KG.relatedTo, RDFS.range, KG.SubjectArea))
+    graph.add((KG.relatedTo, RDFS.label, Literal("related to")))
+
     #Here we create properties that are all subProperties of relatedTo to make it possible to query all items related
     # to a certain topic, or query items from Paper, Journal or Conference independently.
     graph.add((KG.PaperRelatedTo, RDF.type, RDF.Property))
@@ -105,8 +122,11 @@ def create_TBOX():
     graph.add((KG.JournalRelatedTo, RDFS.subPropertyOf, KG.relatedTo))
     graph.add((KG.JournalRelatedTo, RDFS.label, Literal("Journal related to")))
 
-    graph.add((KG.relatedTo, RDFS.range, KG.SubjectArea))
-    graph.add((KG.relatedTo, RDFS.label, Literal("related to")))
+    graph.add((KG.title, RDF.type, RDF.Property))
+    graph.add((KG.title, RDFS.label, Literal("title")))
+    graph.add((KG.title, RDFS.comment, Literal("this is a super-property that can be used to query all items that "
+                                                  "have a title")))
+    graph.add((KG.title, RDFS.range, XSD.string))
 
     #all title are subproperties of KG:title, allowing for flexible querying.
     graph.add((KG.paperTitle, RDF.type, RDF.Property))
@@ -126,12 +146,6 @@ def create_TBOX():
     graph.add((KG.conferenceTitle, RDFS.range, XSD.string))
     graph.add((KG.conferenceTitle, RDFS.subPropertyOf, KG.title))
     graph.add((KG.conferenceTitle, RDFS.label, Literal("title of a Conference")))
-
-    graph.add((KG.title, RDF.type, RDF.Property))
-    graph.add((KG.title, RDFS.label, Literal("title")))
-    graph.add((KG.title, RDFS.comment, Literal("this is a super-property that can be used to query all items that "
-                                                  "have a title")))
-    graph.add((KG.title, RDFS.range, XSD.string))
 
     graph.add((KG.submitted, RDFS.domain, KG.Paper))
     graph.add((KG.submitted, RDFS.range, KG.Submission))
@@ -163,16 +177,15 @@ def create_TBOX():
     graph.add((KG.published, RDFS.range, KG.Volume))
     graph.add((KG.published, RDFS.label, Literal("published")))
 
-    #TODO: fix the double domain
-    graph.add((KG.handledBy, RDFS.domain, KG.Conference))
-    graph.add((KG.handledBy, RDFS.range, KG.Chair))
-    graph.add((KG.handledBy, RDFS.domain, KG.Journal))
-    graph.add((KG.handledBy, RDFS.range, KG.Editor))
-    graph.add((KG.handledBy, RDFS.label, Literal("handledBy")))
+    graph.add((KG.chairedBy, RDFS.domain, KG.Conference))
+    graph.add((KG.chairedBy, RDFS.range, KG.Chair))
+    graph.add((KG.chairedBy, RDFS.label, Literal("chairedBy")))
 
-    #TODO: fix the double domain
-    graph.add((KG.assigned, RDFS.domain, KG.Editor))
-    graph.add((KG.assigned, RDFS.domain, KG.Chair))
+    graph.add((KG.editedBy, RDFS.domain, KG.Journal))
+    graph.add((KG.editedBy, RDFS.range, KG.Editor))
+    graph.add((KG.editedBy, RDFS.label, Literal("editedBy")))
+
+    graph.add((KG.assigned, RDFS.domain, KG.Leader))
     graph.add((KG.assigned, RDFS.range, KG.Reviewer))
     graph.add((KG.assigned, RDFS.label, Literal("assigned")))
     graph.add((KG.assigned, RDFS.comment, Literal("Each class assigning a reviewer should assign at least 2 "
