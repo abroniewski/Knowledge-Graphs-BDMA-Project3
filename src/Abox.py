@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[36]:
-
-
 from rdflib.namespace import RDF, RDFS, FOAF, XSD
 from rdflib import Graph
 import pandas as pd
@@ -117,9 +114,18 @@ Editor_Chair.head()
 KG = Namespace("http://KG-SDM-Lab3.org/")
 g.bind("kg", KG)
 
-g.add((KG.Author, KG.participatedIn, KG.Paper))   
+# TODO: this function will create a new instance of Paper for every author that participated in a paper, and I don't
+#  think they would be linked to the same paper. I'd suggest we create as separate function for:
+#  1 - adding all of the Authors as resources
+#  2 - adding the Papers as resources
+#  3 - connecting the Authors to their Papers
 for k in range(len(Author_Papers['name'])):
-    g.add((Literal(Author_Papers['name'][k]), KG.participatedIn, Literal(Author_Papers['title'][k])))
+    g.add((Author_Papers['name'][k], RDF.type, KG.Author))  # this creates the resource "name" as a type of Author
+    g.add((Author_Papers['title'][k], RDF.type, KG.Paper))  # this creates the resource "title" as a type of Paper
+    g.add((Author_Papers['name'][k], KG.participatedIn, Author_Papers['title'][k]))  # creates link between paper/name
+    g.add((Author_Papers['title'][k], KG.title, Literal(Author_Papers['title'][k])))  # adds human-readable string
+    g.add((Author_Papers['name'][k], KG.name, Literal(Author_Papers['name'][k])))  # adds human-readable string
+
 
 g.add((KG.Paper, KG.PaperRelatedTo, KG.SubjectArea))
 for k in range(len(Keyword_Papers['keyword'])):
