@@ -38,6 +38,7 @@ Reviews = pd.read_csv('../data/raw/publication-data/Reviews.csv')
 
 Author.rename(columns={"id": "idA"}, inplace=True)
 Author_Papers = Author.join(Author_by.set_index('idA'), on="idA").join(Papers.set_index('id'), on="idP")
+Author_Papers['idP']=Author_Papers['idP'].map('p{}'.format)
 
 # In[184]:
 
@@ -114,13 +115,24 @@ KG = Namespace("http://KG-SDM-Lab3.org/")
 g.bind("kg", KG)
 
 
-for k in range(len(Author_Papers['name'])):
-    g.add((KG[Author_Papers['idA'][k]], RDF.type, KG.Author))  # this creates "name" as a type of Author
-    g.add((KG[Author_Papers['idP'][k]], RDF.type, KG.Paper))  # this creates "title" as a type of Paper
-    g.add((KG[Author_Papers['idA'][k]], KG.participatedIn, KG[Author_Papers['idP'][k]]))  # creates link between
+# for k in range(len(Author_Papers['name'])):
+#     g.add((KG[Author_Papers['idA'][k]], RDF.type, KG.Author))  # this creates "name" as a type of Author
+#     g.add((KG[Author_Papers['idP'][k]], RDF.type, KG.Paper))  # this creates "title" as a type of Paper
+#     g.add((KG[Author_Papers['idA'][k]], KG.participatedIn, KG[Author_Papers['idP'][k]]))  # creates link between
+#     # paper/name
+#     g.add((KG[Author_Papers['idP'][k]], KG.title, Literal(Author_Papers['title'][k])))  # adds human-readable string
+#     g.add((KG[Author_Papers['idA'][k]], KG.name, Literal(Author_Papers['name'][k])))  # adds human-readable string
+
+
+for index, row in Author_Papers.iterrows():
+    id_paper = row['idP']
+    id_author = row['idA']
+    g.add((KG[id_author], RDF.type, KG.Author))  # this creates "name" as a type of Author
+    g.add((KG[id_paper], RDF.type, KG.Paper))  # this creates "title" as a type of Paper
+    g.add((KG[id_author], KG.participatedIn, KG[id_paper]))  # creates link between
     # paper/name
-    g.add((KG[Author_Papers['idP'][k]], KG.title, Literal(Author_Papers['title'][k])))  # adds human-readable string
-    g.add((KG[Author_Papers['idA'][k]], KG.name, Literal(Author_Papers['name'][k])))  # adds human-readable string
+    g.add((KG[id_paper], KG.title, Literal(row['title'])))  # adds human-readable string
+    g.add((KG[id_author], KG.name, Literal(row['name'])))  # adds human-readable string
 
 
 # g.add((KG.Paper, KG.PaperRelatedTo, KG.SubjectArea))
