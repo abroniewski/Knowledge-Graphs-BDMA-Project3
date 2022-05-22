@@ -6,6 +6,7 @@ from rdflib import Graph
 import pandas as pd
 from rdflib import Namespace
 from rdflib import Literal
+from tqdm import tqdm
 
 
 # In[28]:
@@ -114,11 +115,12 @@ g.bind("kg", KG)
 
 
 for k in range(len(Author_Papers['name'])):
-    g.add((Author_Papers['idA'][k], RDF.type, KG.Author))  # this creates "name" as a type of Author
-    g.add((Author_Papers['idP'][k], RDF.type, KG.Paper))  # this creates "title" as a type of Paper
-    g.add((Author_Papers['idA'][k], KG.participatedIn, Author_Papers['idP'][k]))  # creates link between paper/name
-    g.add((Author_Papers['idP'][k], KG.title, Literal(Author_Papers['title'][k])))  # adds human-readable string
-    g.add((Author_Papers['idA'][k], KG.name, Literal(Author_Papers['name'][k])))  # adds human-readable string
+    g.add((KG[Author_Papers['idA'][k]], RDF.type, KG.Author))  # this creates "name" as a type of Author
+    g.add((KG[Author_Papers['idP'][k]], RDF.type, KG.Paper))  # this creates "title" as a type of Paper
+    g.add((KG[Author_Papers['idA'][k]], KG.participatedIn, KG[Author_Papers['idP'][k]]))  # creates link between
+    # paper/name
+    g.add((KG[Author_Papers['idP'][k]], KG.title, Literal(Author_Papers['title'][k])))  # adds human-readable string
+    g.add((KG[Author_Papers['idA'][k]], KG.name, Literal(Author_Papers['name'][k])))  # adds human-readable string
 
 
 # g.add((KG.Paper, KG.PaperRelatedTo, KG.SubjectArea))
