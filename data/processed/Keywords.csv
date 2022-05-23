@@ -1,0 +1,2045 @@
+idK,keyword
+k0,Environment
+k1,Goal(s)
+k2,Intelligent agents
+k3,Proficiency
+k4,Self-assessment
+k5,System
+k6,Computer-aided engineering
+k7,Data-driven engineering
+k8,Dating
+k9,Emerging adults
+k10,Mobile phones
+k11,Uses and gratifications
+k12,Compressed sensing
+k13,Data-driven models
+k14,Koopman modes
+k15,Modeling
+k16,Physics-based models
+k17,Power system dynamics
+k18,Back face deformation
+k19,Ballistic impact
+k20,Body armor
+k21,Fiber Bragg grating
+k22,Kevlar
+k23,Collaboration
+k24,Cybersickness
+k25,Immersive
+k26,Spatial awareness
+k27,Viewpoint
+k28,Viewpoint sharing
+k29,Virtual Reality
+k30,Co-simulation
+k31,Cyber-physical systems
+k32,ICT irregularities
+k33,Probabilistic observability
+k34,State estimation
+k35,biosensors
+k36,membrane
+k37,microfabrication
+k38,microfluidics
+k39,nanopores
+k40,Carbon nanotube
+k41,CO2 capture
+k42,Life cycle assessment
+k43,Payback period
+k44,Solid amine
+k45,FSpW
+k46,Refill friction stir spot welding
+k47,RFSSW
+k48,Temperature
+k49,Tool life
+k50,Cooperating robots
+k51,multi-robot systems
+k52,path planning for multiple mobile robots or agents
+k53,Fiber Bragg Grating
+k54,High speed measurements
+k55,Optical fiber sensors
+k56,Bézier extraction
+k57,Dual basis
+k58,Isogeometric analysis
+k59,Locking
+k60,Reissner–Mindlin
+k61,Shells
+k62,Acoustic
+k63,Concrete bridge deck
+k64,Delamination
+k65,Impact-echo
+k66,Sounding
+k67,performance feedback
+k68,production yields
+k69,quality-speed tradeoffs
+k70,rework
+k71,speed-accuracy tradeoffs
+k72,Active thermal control
+k73,Deployable radiator
+k74,Spacecraft thermal control
+k75,Catalysis
+k76,CO2 reduction
+k77,Coal
+k78,Gasification
+k79,Ideal syngas
+k80,Pyrolysis
+k81,bandpass filter
+k82,biquad filter
+k83,particle detector
+k84,pulse shaping
+k85,Sallen-Key
+k86,Shaper
+k87,content
+k88,deep learning
+k89,metadata
+k90,Research paper
+k91,Atomistic simulations
+k92,Grain boundaries
+k93,Nickel
+k94,analog-to-digital converter (ADC)
+k95,delta sigma (?S)
+k96,incremental data converters
+k97,multi stage noise shaping (MASH)
+k98,multi-step
+k99,time-domain analysis
+k100,two step
+k101,Cooperative navigation
+k102,direction-of-arrival estimation
+k103,MIMO systems
+k104,pose estimation
+k105,relative attitude estimation
+k106,unmanned aerial vehicles
+k107,aerial robotics
+k108,multiplicative extended Kalman filter
+k109,Sensor fusion
+k110,vision-aided inertial navigation
+k111,Algal-bacterial culture
+k112,Membrane bioreactor
+k113,Microalgae
+k114,Photo-bioreactor
+k115,Wastewater treatment
+k116,Design for humans
+k117,Design for X
+k118,Product development
+k119,Sustainable design
+k120,User-centered design
+k121,Aerial robotics
+k122,epipolar geometry
+k123,multi-target tracking
+k124,unmanned aircraft systems
+k125,vision-based flight
+k126,Electromagnetic sensors
+k127,In vivo measurements
+k128,Inverse kinematics
+k129,ISB
+k130,Landmark
+k131,Postural
+k132,Sensor-to-body
+k133,Sensor-to-segment
+k134,Upper limb
+k135,Whole arm
+k136,Compact mechanism
+k137,Conical surface
+k138,Developable mechanism
+k139,Spherical mechanism
+k140,Field-programmable gate array (FPGA)
+k141,neural networks
+k142,quantization
+k143,reliability
+k144,aliased effects
+k145,CME analysis
+k146,confounding
+k147,effect heredity
+k148,effect sparsity
+k149,hierarchical ordering
+k150,Aeronautical telemetry
+k151,continuous phase modulation (CPM)
+k152,frequency-selective multipath
+k153,shaped offset QPSK (SOQPSK)
+k154,sparse channel estimation
+k155,Dashboards
+k156,Distributed learning environments
+k157,Human-computer interface
+k158,Interactive learning environments
+k159,Learning analytics
+k160,Online learning systems
+k161,Additive manufacturing
+k162,Dislocation structures
+k163,Elastic strain
+k164,Microstructural evolution
+k165,Nickel superalloys
+k166,Rapid solidification
+k167,footwear
+k168,Marathon racing
+k169,performance
+k170,additive manufacturing
+k171,thin liquid films
+k172,Binder Jetting
+k173,Inkjet printing
+k174,Saturation
+k175,Stainless Steel
+k176,current-voltage measurement
+k177,DNA nanofabrication
+k178,electroless plating
+k179,gold nanorods
+k180,nanoelectronics
+k181,tellurium nanorods
+k182,Data structure
+k183,Genomics
+k184,K-mer
+k185,Parallel programming
+k186,complex dynamics
+k187,Dynamic network
+k188,intrinsic stability
+k189,recurrent neural network
+k190,specialization
+k191,spectral properties
+k192,Biharmonic problem
+k193,C1 continuity
+k194,Dual mortar method
+k195,Enriched Bézier dual basis
+k196,Patch coupling
+k197,Feature description algorithm
+k198,Log-polar coordinates
+k199,Rotation-invariance
+k200,Scale-invariance
+k201,Vision-based measurement
+k202,Discrete-ordinates method
+k203,Experiments and modelling
+k204,Radiative heat transfer
+k205,Rotary kiln
+k206,3D printing
+k207,biocompatibility
+k208,cytotoxicity
+k209,resin
+k210,spheroid
+k211,Product design
+k212,control architectures and programming
+k213,deep learning in robotics and automation
+k214,model learning for control
+k215,Optimization and optimal control
+k216,electronic design automation
+k217,fault detection
+k218,radiation effects
+k219,redundancy
+k220,3D hydrodynamic focusing
+k221,Biosensor
+k222,Lab-on-a-chip
+k223,Liquid-core waveguide
+k224,Microfluidic
+k225,Microscale channel
+k226,Optofluidic
+k227,Reservoir effect
+k228,Single layer
+k229,Co-Sn alloy
+k230,combinatorial
+k231,high-throughput characterization
+k232,Li-metal battery
+k233,protection layer
+k234,Greater sage-grouse
+k235,Photogrammetry
+k236,Sagebrush
+k237,SUAS
+k238,Carbohydrate fuel cell
+k239,Glucose fuel cell
+k240,Glucose oxidation
+k241,Oxidation efficiency
+k242,Viologen mediator
+k243,ADC
+k244,comparator
+k245,low power
+k246,SAR
+k247,subthrehold operation
+k248,ultra low supply
+k249,variations
+k250,Cooling rate
+k251,Friction welding
+k252,Microstructure control
+k253,Rotary friction welding
+k254,Temperature control
+k255,Transformation
+k256,Date grading
+k257,Evolutionary learning
+k258,Oyster grading
+k259,Quality grading
+k260,Smart camera
+k261,Visual inspection
+k262,Feature descriptor
+k263,FPGA
+k264,Synthetic basis
+k265,Finite element analysis (FEA)
+k266,Nanocomposite
+k267,Percolation theory
+k268,Piezoresistive sensor
+k269,Demineralized bone matrix
+k270,Laser sintering
+k271,Optimization
+k272,Polycaprolactone
+k273,Porosity
+k274,Shrinkage
+k275,Tensile strength
+k276,Chained pseudo-rigid-body model
+k277,Compliant mechanisms
+k278,Contact analysis
+k279,Large deflection
+k280,Ash
+k281,Biomass
+k282,Non-catalytic
+k283,Density functional theory
+k284,Generalized grids
+k285,k-point grids
+k286,k-point sampling
+k287,Monkhorst-Pack
+k288,Regular grids
+k289,Electromagnetic isolation
+k290,frequency division duplexing
+k291,microwave printed circuit board
+k292,small aircraft
+k293,x band
+k294,Gas chromatography
+k295,MEMS
+k296,microcolumn
+k297,silicon DRIE
+k298,thermal gradient
+k299,Natural convection
+k300,Slip length
+k301,Superhydrophobic surface
+k302,Temperature jump length
+k303,Vertical wall
+k304,Alumina
+k305,Oxidative dehydrogenation
+k306,Silica
+k307,Auto tuning
+k308,Friction stir welding
+k309,Relay feedback test
+k310,System identification
+k311,Aged parameter estimation
+k312,Battery management systems
+k313,BCJR Algorithm
+k314,Interacting multiple model Kalman filter
+k315,Lithium ion battery
+k316,Viterbi algorithm
+k317,compressed sensing
+k318,frequency-selective multi-path
+k319,sparse channel
+k320,sparse equalizers
+k321,transmit diversity
+k322,Discrete ordinates method
+k323,Heat transfer
+k324,Iron ore
+k325,Rotary Kiln
+k326,back stress
+k327,cpfem
+k328,ebsd
+k329,gnd
+k330,tantalum
+k331,Environmental dynamic capability
+k332,Green human resource management bundles
+k333,Green product innovation
+k334,Green team creativity
+k335,Technological turbulence
+k336,drug delivery
+k337,latanoprost
+k338,Silicone hydrogel contact lens
+k339,swelling
+k340,Ceragenins
+k341,Human cathelicidin
+k342,LL-37 peptide
+k343,Membrane active compounds
+k344,Nanoantibiotics
+k345,Nanomedicine
+k346,Nanotechnology
+k347,bubble
+k348,flow optimization
+k349,in situ
+k350,LCM
+k351,Void
+k352,Computational modeling
+k353,Integrated circuit modeling
+k354,Integrated Optics
+k355,Photonics
+k356,Scattering
+k357,Scattering parameters
+k358,Simulation
+k359,Tools
+k360,Transmission line matrix methods
+k361,Adaptive thinking
+k362,Aptitudes
+k363,Creative thinking
+k364,Design thinking
+k365,Divergent thinking
+k366,Tolerance for ambiguity
+k367,Visual thinking
+k368,Common-sense reasoning
+k369,Language model evaluation
+k370,Language models
+k371,Sentence embeddings
+k372,Word embeddings
+k373,mems
+k374,nanofluidics
+k375,thin films
+k376,Common cause failure
+k377,Continuous time Markov chains
+k378,Systems with repair
+k379,Triple modular redundancy (TMR)
+k380,dynamics
+k381,Flexible arms
+k382,force control
+k383,motion control
+k384,Envelope Methods
+k385,Multi-Resolution
+k386,Multi-User CAD
+k387,Partitioning Methods
+k388,Planar Decomposition
+k389,Acoustic response
+k390,Impact-echo testing
+k391,Detection
+k392,Information security
+k393,Machine learning
+k394,Malware
+k395,Neural networks
+k396,Offensive
+k397,Bragg diffraction
+k398,Lattice deformation
+k399,Shock physics
+k400,Single crystal model
+k401,X-ray
+k402,Accelerometer
+k403,Contact angle
+k404,Contact line
+k405,Spreading
+k406,Ultrasonic vibration
+k407,Wetting
+k408,Configuration scrubbing
+k409,fault injection
+k410,field-programmable gate arrays (FPGAs)
+k411,radiation testing
+k412,single-event effects (SEEs)
+k413,single-event upset (SEU)
+k414,single-point failure (SPF)
+k415,triple modular redundancy (TMR)
+k416,Field-programmable gate arrays (FPGAs)
+k417,multiple-bit upset (MBU)
+k418,multiple-cell upset (MCU)
+k419,Electromagnetic excitation
+k420,Nondestructive evaluation
+k421,Nondestructive testing
+k422,Nonlinear resonant ultrasound spectroscopy
+k423,Chained-beam-constraint model
+k424,Contact-aided compliant mechanism
+k425,Cross-Axis Flexural Pivot
+k426,Multi software framework
+k427,Drilling automation
+k428,Managed pressure drilling
+k429,Nonlinear model predictive control
+k430,Physics-based drilling flow model
+k431,Pressure control
+k432,Effective area
+k433,gain-enhancement
+k434,minimum scattering antennas (MSAs)
+k435,parasitic elements
+k436,Poynting vector streamlines
+k437,receiving antennas
+k438,Bénard convection
+k439,Taylor-Couette flow
+k440,brain tumors
+k441,complex networks
+k442,Convolutional neural network
+k443,network generator
+k444,randomly generated graph
+k445,Silent data corruption (SDC)
+k446,soft errors
+k447,software fault tolerance
+k448,Augmented reality
+k449,Force feedback
+k450,Microsoft Hololens
+k451,Motion planning
+k452,Robotic arm
+k453,Signal aliasing
+k454,Structural health monitoring
+k455,Sub-Nyquist sampling
+k456,Vibro-acoustics
+k457,Video processing
+k458,Batteries
+k459,Battery charger
+k460,Battery chargers
+k461,control scheme
+k462,high power efficiency.
+k463,Inductors
+k464,quick charging
+k465,small size
+k466,Switches
+k467,Universal Serial Bus
+k468,Zero current switching
+k469,Zero voltage switching
+k470,atomic beams
+k471,atomic physics
+k472,atomic sensors
+k473,microfabricated vapor cells
+k474,optical frequency standards
+k475,quantum metrology
+k476,healthcare cost
+k477,medical error
+k478,operational failures
+k479,survey
+k480,workarounds
+k481,Auto-induction
+k482,Autoinduction
+k483,Cell-free protein synthesis
+k484,CFPS
+k485,Clearcoli
+k486,Crisantaspase
+k487,Endotoxin-free
+k488,Cylindrical developable mechanism
+k489,Developable surface
+k490,Morphing mechanism
+k491,Clustering
+k492,External metrics
+k493,Noise
+k494,CT analysis
+k495,damage mechanics
+k496,porosity
+k497,Resin transfer moulding
+k498,Boundary element methods
+k499,Collocation
+k500,Linear elasticity
+k501,Patch tests
+k502,T-splines
+k503,Coset coding
+k504,Physicallayer security
+k505,Quadrature amplitude modulation
+k506,Security gap
+k507,Annotating
+k508,Camera
+k509,IMU
+k510,Labeling
+k511,Synchronization
+k512,Video
+k513,Calibration
+k514,cryptography
+k515,multiple-input-multiple-output (MIMO) systems
+k516,reciprocity principle
+k517,security
+k518,air conditioning
+k519,endotoxin
+k520,evaporative cooling
+k521,house dust-mite
+k522,hygiene hypothesis
+k523,β-(1 → 3)-d-glucans
+k524,Egg quality inspection
+k525,Embedded vision sensor
+k526,Pavement quality evaluation
+k527,Road condition detection
+k528,Approximation algorithms
+k529,linear systems
+k530,model reduction
+k531,Image gradient
+k532,Image quality assessment
+k533,Local binary pattern
+k534,No-reference
+k535,Phase congruency
+k536,compliant mechanisms
+k537,heat set
+k538,origami
+k539,origami manufacturing
+k540,polyethylene terephthalate
+k541,artificial neural networks (ANNs)
+k542,connection weight approach
+k543,data mining
+k544,Discrete event simulation (DES)
+k545,Continuous phase modulation (CPM)
+k546,equalization
+k547,frequency selective multipath
+k548,Communication irregularities
+k549,Network observability
+k550,Parameter Estimation
+k551,Reduced Order Systems
+k552,System Identification
+k553,Applied origami
+k554,Folding
+k555,Sacrificial joints
+k556,Building damage mapping
+k557,Seismic foundation performance
+k558,Site response
+k559,Structural resonance
+k560,bending modulus
+k561,carbon infiltrated-carbon nanotubes
+k562,carbon nanotubes
+k563,density
+k564,non-destructive testing
+k565,Raman spectroscopy
+k566,conductive ink
+k567,electronic packaging9large area projection sintering
+k568,harsh environmental testing
+k569,hybrid electronics
+k570,printed electronics
+k571,Exercise response
+k572,Feedback control
+k573,Gulf War Illness
+k574,Immune dynamics
+k575,Oscillatory behavior
+k576,Convective heat transfer
+k577,Isoflux wall
+k578,Jet impingement
+k579,image quality assessment
+k580,image structure
+k581,just-noticeable difference
+k582,local binary pattern
+k583,reduced-reference
+k584,biophotonics
+k585,biosensor
+k586,hydrodynamic focusing
+k587,liquid-core waveguide
+k588,multi-spot excitation
+k589,optofluidics
+k590,human robot interaction
+k591,robotics
+k592,transparency
+k593,Bootstrapped switch
+k594,DAC
+k595,SAR ADC
+k596,Time interleaved
+k597,Arduino
+k598,Control Engineering Education
+k599,PID Control
+k600,time interleaved
+k601,clinical decision support system (CDSS)
+k602,Erectile dysfunction (ED)
+k603,genetic algorithm (GA)
+k604,National Health Insurance Research Database (NHIRD)
+k605,support vector machine (SVM)
+k606,Folding kinetics
+k607,G-quadruplex
+k608,Hydrodynamic flow focusing
+k609,Micromixer
+k610,Three-dimensional focusing
+k611,Phase transformation
+k612,Pore structure evolution
+k613,Silica doped alumina
+k614,Thermal and hydrothermal stability
+k615,Transitional alumina
+k616,Binder jetting
+k617,Materials
+k618,Post-processing
+k619,Powder deposition
+k620,Sintering
+k621,Feature detection
+k622,Feature matching
+k623,Image correspondence
+k624,Synthetic basis functions
+k625,Gaussian wiretap channel
+k626,Physical-layer security
+k627,practical secrecy coding
+k628,Dissimilar
+k629,Friction stir scribe technology
+k630,Intermetallic
+k631,Kinetic
+k632,Thermodynamic
+k633,Ballistic fabric
+k634,Impact behavior
+k635,ARL
+k636,Cusum
+k637,EWMA
+k638,Phase II monitoring
+k639,variability
+k640,Design ethnography
+k641,Design for the developing world
+k642,Engineering for global development
+k643,Low resource
+k644,Poverty alleviation
+k645,Resource-poor
+k646,Fault tolerance
+k647,RISC-V
+k648,Single Event Upset (SEU)
+k649,soft processor
+k650,Triple Modular Redundancy (TMR)
+k651,Assessment
+k652,instructor feedback
+k653,oral presentations
+k654,peer feedback.
+k655,Coining
+k656,Dislocation density
+k657,EBSD
+k658,Metals
+k659,Microforming
+k660,Microstructure formation
+k661,Brightness temperature
+k662,Calibrated Passive Microwave Daily Equal-Area Scalable Earth Grid 20 Brightness Temperature (CETB)
+k663,radiometer
+k664,reconstruction
+k665,Soil Moisture Active Passive (SMAP)
+k666,Curved folding
+k667,developable
+k668,energy
+k669,Contact time
+k670,Droplet impact
+k671,Superhydrophobic surfaces
+k672,foot function
+k673,foot strength
+k674,foot structure
+k675,intrinsic muscles
+k676,athletic footwear
+k677,athletic Performance
+k678,carbon fiber
+k679,running performance
+k680,running shoe
+k681,shoe stiffness
+k682,sports biomechanics
+k683,Linear independence
+k684,Local refinement
+k685,Dislocations
+k686,Molecular dynamics
+k687,Automated inspection
+k688,Dam inspection
+k689,Multi-Scale
+k690,Structure from motion
+k691,Unmanned aerial vehicles
+k692,View-planning
+k693,gyroscope
+k694,gyrostabilizer
+k695,hand
+k696,suppression
+k697,Tremor
+k698,wrist
+k699,Binarized Neural Networks
+k700,Deep learning
+k701,Deep neural network compression
+k702,Deep Neural Networks
+k703,Digital design
+k704,Radar scattering
+k705,RapidScat
+k706,scatterometer
+k707,wind
+k708,Backscatter
+k709,Backus-Gilbert (BG)
+k710,sampling
+k711,scatterometer image reconstruction (SIR)
+k712,variable aperture
+k713,Security
+k714,Two-factor authentication
+k715,Usability
+k716,Usable security
+k717,Audience awareness
+k718,case-method
+k719,pedagogy
+k720,report and proposal writing
+k721,Acoustic scattering
+k722,Finite element
+k723,High frequency scattering
+k724,High order local absorbing boundary condition
+k725,Isogeometric analysis (IGA)
+k726,Very low frequency
+k727,Chiller
+k728,Dynamic optimization
+k729,Mixed-integer quadratic programming
+k730,Thermal energy storage
+k731,Big data classification
+k732,Diffusion maps
+k733,Manifold learning
+k734,Parameter identification
+k735,WECC load model
+k736,LAPS
+k737,Electron microscopy
+k738,Twinning
+k739,VPSC
+k740,Earthquakes
+k741,Infrastructure
+k742,Seismic risk
+k743,Soil-structure-interaction
+k744,Additive manufacturing (AM)
+k745,coplanar waveguide (CPW)
+k746,surface roughness
+k747,thermal smoothing (TS)
+k748,vapor smoothing (VS)
+k749,A. Fabrics/textiles
+k750,B. Permeability
+k751,D. Process monitoring
+k752,E. Liquid composite molding
+k753,E. Resin flow
+k754,Bioorthogonal chemistry
+k755,Biotechnology
+k756,Metabolic labeling
+k757,Proteomics
+k758,Residue-specific labeling
+k759,Site-specific labeling
+k760,Evolutionary constructed features
+k761,Hardware implementation
+k762,Jet features
+k763,Object classification
+k764,design critique
+k765,design education
+k766,ethics
+k767,philosophy of design
+k768,reasoning
+k769,Functional data analysis
+k770,Internal knee extension moment
+k771,Knee flexion angle
+k772,Vertical ground reaction force
+k773,Waveform analysis
+k774,Bag-of-features model
+k775,Chinese food
+k776,Recognition
+k777,Dynamic stiffness matrix
+k778,Flexure hinge
+k779,Micro-/nano positioning
+k780,adaptive filtering
+k781,physical-layer security
+k782,self-jamming
+k783,Adaptive physical-layer security
+k784,coding for secrecy
+k785,interleaving
+k786,puncturing
+k787,scrambling
+k788,DTPA-BIGA
+k789,DTPABMA
+k790,Gadolinium retention
+k791,Gd-DTPA-BIGA
+k792,Gd-DTPA-BMA
+k793,ICP-MS
+k794,Transmetallation
+k795,Zinc sink
+k796,High-throughput simulations
+k797,Materials informatics
+k798,Metallic glasses
+k799,Structure-property relationships
+k800,Basis Vectors
+k801,Crystal Structure
+k802,Database
+k803,Lattice Vectors
+k804,Space Groups
+k805,Wyckoff Positions
+k806,Grassroots adoption
+k807,Paired participants
+k808,PGP
+k809,Secure email
+k810,Equalization
+k811,maximum likelihood sequence estimation
+k812,SOQPSK
+k813,"Chondrodysplasia (cho, col11a1)"
+k814,High temperature requirement A1 serine protease (HtrA1)
+k815,Losartan
+k816,Osteoarthritis (OA)
+k817,Temporomandibular joint (TMJ)
+k818,Transforming growth factor-beta 1 (TGF-β1)
+k819,Numerical simulation
+k820,Recrystallized grain size
+k821,Stainless steel
+k822,Physical layer security
+k823,Polar codes
+k824,Wiretap channel
+k825,mapping
+k826,SLAM
+k827,Compatibility
+k828,Deformation
+k829,Grouted prisms
+k830,High-strength masonry
+k831,Hollow prisms
+k832,Masonry efficiency
+k833,Masonry grout
+k834,Shrinkage compensating admixtures
+k835,Air-coupled impact-echo testing
+k836,Chain dragging
+k837,Beam steering
+k838,multiple-input multiple-output (MIMO) systems
+k839,mutual coupling
+k840,radar antennas
+k841,Crystallographic orientation
+k842,Hydrogen embrittlement
+k843,Recovery
+k844,Steel
+k845,capabilities
+k846,excess
+k847,Over-design
+k848,redesign
+k849,requirements
+k850,Biocompatible
+k851,Flexible
+k852,III-nitride
+k853,Piezoelectric generators
+k854,Self-powered system
+k855,Thin film
+k856,Stress corrosion cracking
+k857,Biofabrication
+k858,DNA
+k859,Nanofabrication
+k860,Roadmap
+k861,Semiconductors
+k862,Finite element modeling
+k863,Stiffness
+k864,Tissue properties
+k865,Transverse compression
+k866,Young's modulus
+k867,pneumatic actuators
+k868,robot kinematics
+k869,soft robotics
+k870,state estimation
+k871,visual servoing
+k872,Mass transfer
+k873,Nucleation
+k874,Superhydrophobic
+k875,CS education
+k876,CS for All
+k877,K-12
+k878,Deformable capsule
+k879,IGA
+k880,Pulsatile flow
+k881,T-spline
+k882,complex systems
+k883,Drenick's theorem
+k884,exponential distribution
+k885,failure law
+k886,Array antennas
+k887,element-gain paradox
+k888,Poynting streamlines
+k889,DAC layout
+k890,DAC settling
+k891,timing scheme
+k892,Brittle crack
+k893,Crack interaction
+k894,Graph theory
+k895,Reduced-order models
+k896,Ensembles
+k897,Multiple Choice Learning
+k898,3D display
+k899,Acousto-optic modulator
+k900,Holographic video
+k901,Laser-induced structures
+k902,Leaky mode
+k903,Lithium niobate
+k904,Near-eye display
+k905,Computational differential geometry
+k906,Manifold boundary approximation method
+k907,Model reduction
+k908,Parameter identifiability
+k909,Power system modeling
+k910,Architecture development
+k911,Brainstorming
+k912,Cad modeling
+k913,Controlled convergence
+k914,Customizing the product development process
+k915,Design for manufacturing
+k916,Engineering drawings
+k917,Failure modes and effects analysis
+k918,Product development design skills
+k919,Product development textbook
+k920,Product ergonomics
+k921,Product refinement
+k922,Prototyping
+k923,Quality function deployment
+k924,Subsystem engineering
+k925,Troubleshooting
+k926,Uncertainty analysis
+k927,Value engineering
+k928,Computer vision
+k929,Image processing
+k930,Mode shape identification
+k931,PCA
+k932,Alassroom archive
+k933,Industrial design history
+k934,Instagram search
+k935,Instagram student presentations
+k936,Social media
+k937,Class room design
+k938,Creativity pedagogy
+k939,Industrial design
+k940,Student learning
+k941,Studio environment
+k942,Communication
+k943,Design education
+k944,Interdisciplinary education
+k945,Interdisciplinary teams
+k946,Big data
+k947,Design methods
+k948,Persona
+k949,Persona Generator
+k950,User centred design
+k951,Learning in games
+k952,Repeated interactions
+k953,Trigger strategies
+k954,Dense phase
+k955,Fluidization
+k956,Pressurized coal
+k957,Transport
+k958,Behavior trees
+k959,Grammatical evolution
+k960,Swarms
+k961,Frequency response
+k962,Leap motion controller
+k963,Markerless motion capture
+k964,Best Practices
+k965,Impact Assessment
+k966,Service Learning
+k967,Clean water
+k968,Cup seal
+k969,Hand pump
+k970,India Mark
+k971,Village Drill
+k972,Signal processing
+k973,Design intent
+k974,Neutral format
+k975,Parametric design
+k976,XML
+k977,FTIR
+k978,Particle combustion
+k979,Radiation
+k980,Aluminum mirror coatings
+k981,FUV
+k982,Lifetime
+k983,Magnesium fluoride
+k984,Oxidation
+k985,Quality assurance
+k986,Spectroscopic ellipsometry
+k987,XPS
+k988,Lab on a chip
+k989,Microfluidics
+k990,Stereolithography
+k991,Laser ablation
+k992,Magnesium
+k993,Micro machining
+k994,Automated assessment
+k995,software tools in control
+k996,student expectations
+k997,Ceramic blocks
+k998,Efflorescence
+k999,Masonry
+k1000,Soluble salts
+k1001,Test methods
+k1002,Multi-robot systems
+k1003,nonlinear filters
+k1004,nonlinear observability
+k1005,Ethical climate
+k1006,Ethics
+k1007,Mixed-methods
+k1008,Biophotonics
+k1009,soft photolithography
+k1010,waveguides
+k1011,Capstone
+k1012,Customer needs
+k1013,Design deliverables
+k1014,Project descriptions
+k1015,Sponsor expectations
+k1016,Bi-objective
+k1017,Design space exploration
+k1018,Technology tactics plot
+k1019,Gases
+k1020,SLW model
+k1021,Thermal radiation
+k1022,cyber-physical
+k1023,digital twin
+k1024,exhaustive search
+k1025,PID tuning
+k1026,smart tuning
+k1027,temperature control
+k1028,Combustion
+k1029,On-site measurements
+k1030,Two-phase flow
+k1031,social sustainability
+k1032,sustainable design
+k1033,lithography
+k1034,optics
+k1035,photonics
+k1036,Assembly simplification
+k1037,Computer-aided design
+k1038,External geometry
+k1039,Ray casting
+k1040,field programmable gate arrays (FPGAs)
+k1041,Femtosecond laser micromachining
+k1042,Guided-wave acousto-optics
+k1043,Holographic display
+k1044,Surface acoustic waves
+k1045,Chirped fiber Bragg grating
+k1046,Phase change materials
+k1047,Pump-probe spectroscopy
+k1048,Single-shot spectroscopy
+k1049,Time-stretching
+k1050,Timeencoding
+k1051,Active learning
+k1052,Alloy phase prediction
+k1053,Cluster expansion
+k1054,Interatomic potentials
+k1055,Moment Tensor Potentials
+k1056,Architectural programming
+k1057,Design science
+k1058,Serious games
+k1059,Simulations
+k1060,Target value design
+k1061,Value
+k1062,Adobe
+k1063,Conservation
+k1064,Historical preservation
+k1065,Rammed earth
+k1066,Structural rehabilitation
+k1067,Clay blocks
+k1068,Compressive strength
+k1069,FEA
+k1070,Numerical modelling
+k1071,Structural masonry
+k1072,Ensemble feature selection
+k1073,Maximal oxygen uptake
+k1074,Prediction
+k1075,Rank aggregation
+k1076,Support vector machine
+k1077,Dynamic equivalent
+k1078,Online measurement
+k1079,REI equivalent
+k1080,WLS nonlinear optimization
+k1081,compositional MRI
+k1082,dGEMRIC
+k1083,hip
+k1084,T2 mapping
+k1085,calorimetry
+k1086,neutron scattering
+k1087,surface chemistry
+k1088,hardening
+k1089,adhesion
+k1090,conductive inks
+k1091,single lap shear testing
+k1092,surface treatments
+k1093,Confinement
+k1094,Mortar
+k1095,Numerical model
+k1096,Stress-strain behaviour
+k1097,Fully compliant
+k1098,multistable mechanism
+k1099,pseudo-rigid-body model
+k1100,Data
+k1101,Disasters
+k1102,Emergency response
+k1103,Framework
+k1104,Hurricanes
+k1105,Crisis informatics
+k1106,Delphi method
+k1107,Emergency management
+k1108,Software requirements
+k1109,Air-sea interaction
+k1110,Doppler
+k1111,Relative vorticity
+k1112,Scatterometer
+k1113,Sea ice
+k1114,Surface currents
+k1115,Surface winds
+k1116,Design reference mission
+k1117,Landing sites
+k1118,Lunar exploration
+k1119,Moon
+k1120,Sample return
+k1121,South Pole-Aitken basin
+k1122,Global Optimization
+k1123,Communication delay
+k1124,Packet drop
+k1125,Film boiling
+k1126,Microstructure
+k1127,Pool boiling
+k1128,Post patterned
+k1129,Rib patterned
+k1130,diabetes
+k1131,encapsulation
+k1132,stem cells
+k1133,Compliant mechanism
+k1134,Lamina emergent joint
+k1135,Maximum torsion stress
+k1136,Rectangular beam
+k1137,Content learning
+k1138,Flipped classroom
+k1139,Undergraduate
+k1140,Multi-scale asymptotics
+k1141,Reduced models
+k1142,Slow manifold
+k1143,Wave-mean flow interaction
+k1144,Anti-carbon deposition
+k1145,Chemical looping combustion
+k1146,Copper oxide oxygen carrier
+k1147,Fly ash support
+k1148,3D printing. rapid prototyping
+k1149,modeling
+k1150,proof of concept
+k1151,user testing
+k1152,Virtual reality
+k1153,Exceptional polynomial
+k1154,Permutation polynomial
+k1155,Separable polynomial
+k1156,Weil bound
+k1157,Channel coding
+k1158,integrated optics
+k1159,phased arrays
+k1160,quantum mechanics
+k1161,HPC
+k1162,Smoothed Particles Hydrodynamics
+k1163,Bearing
+k1164,Capillary
+k1165,Surface tension
+k1166,in vitro protein synthesis
+k1167,Protein biosensor
+k1168,TX-TL
+k1169,Carbon capture
+k1170,Chemical absorption
+k1171,Dynamic inputs
+k1172,Low temperature carbon capture
+k1173,Power generation
+k1174,Cancer
+k1175,Carbon nanotubes
+k1176,Chemical vapor deposition
+k1177,CIP2A
+k1178,Immunosensor
+k1179,Point-of-care diagnostics
+k1180,Network coding
+k1181,Routing
+k1182,Store code and forward
+k1183,Topology inference
+k1184,Construction education
+k1185,environmental systems
+k1186,HVAC
+k1187,mechanical systems
+k1188,student learning outcomes
+k1189,logistics
+k1190,military logistics
+k1191,Operation planning
+k1192,route modeling
+k1193,vessel route planning
+k1194,Ferritin
+k1195,Lead sulfide
+k1196,Nanoparticles
+k1197,Photovoltaics
+k1198,Quantum dots
+k1199,Solar cells
+k1200,Forming limit
+k1201,Q&P steel
+k1202,Retained austenite
+k1203,Strain path
+k1204,Compliant stiffener
+k1205,finite element models
+k1206,large deflection
+k1207,lenticular stiffener
+k1208,non-linear elasticity
+k1209,Attitude
+k1210,Engineering
+k1211,Interest
+k1212,Literacy
+k1213,Reading
+k1214,STEM
+k1215,Technology
+k1216,Angular surfaces
+k1217,Cavity effect
+k1218,Specular reflection
+k1219,V-groove
+k1220,Variable emissivity surface
+k1221,Alumina nanoparticles
+k1222,Ferrocene
+k1223,Natural radial frequency
+k1224,Pile
+k1225,Raft
+k1226,Superstructure
+k1227,Hernia
+k1228,Pelvic organ prolapse
+k1229,Prolene®
+k1230,Prosthetic mesh
+k1231,Drug discovery
+k1232,Peptide
+k1233,Random forest
+k1234,dielectric waveguides
+k1235,fluorescence spectroscopy
+k1236,multimode interference waveguides
+k1237,multiplexing
+k1238,Collaborative filtering
+k1239,Movie recommendation
+k1240,Graduate school
+k1241,Recommender
+k1242,Cylindrical
+k1243,ODT
+k1244,One-dimensional turbulence
+k1245,Turbulence modeling
+k1246,Compliant
+k1247,Curvature
+k1248,Developable
+k1249,Joint
+k1250,Rolling contact
+k1251,Ruled surface
+k1252,hardware tokens
+k1253,longitudinal study
+k1254,two factor authentication
+k1255,usability
+k1256,YubiKey
+k1257,Future of innovation
+k1258,IRI Research
+k1259,R&D leadership
+k1260,Talent management
+k1261,schools
+k1262,Twitter
+k1263,complementary metal-oxide-semiconductor image sensor
+k1264,contact imaging
+k1265,hybrid microfluidic
+k1266,integrated valves
+k1267,polydimethylsiloxane
+k1268,Antenna arrays
+k1269,antenna radiation pattern synthesis
+k1270,affective theories
+k1271,design projects
+k1272,electrodermal activity
+k1273,learning environment
+k1274,multimodal methods
+k1275,Flexible manipulator
+k1276,Transfer matrix method
+k1277,infrared imaging
+k1278,infrared space observatory
+k1279,infrared spectroscopy
+k1280,planets
+k1281,telescopes
+k1282,Wide Field Infrared Survey Telescope
+k1283,Particle traps
+k1284,Illusion of learning
+k1285,Student-centered learning
+k1286,CC2005
+k1287,CC2020
+k1288,Computing education
+k1289,Future computing education
+k1290,Bézier dual basis
+k1291,Bézier projection
+k1292,B̄-projection
+k1293,charge redistribution
+k1294,Charge-steering amplifier
+k1295,dynamic amplifier
+k1296,dynamic circuit
+k1297,operational amplifier
+k1298,Annealing twins
+k1299,Recrystallization
+k1300,Superalloy
+k1301,Convection
+k1302,Microchannel
+k1303,Dielectric waveguides
+k1304,fluorescence
+k1305,multimode waveguides
+k1306,rib waveguides
+k1307,Concentric and eccentric loading
+k1308,High-strength concrete masonry block
+k1309,Hollow and grouted prisms
+k1310,BP neural network
+k1311,Inverse piezoresistive nanocomposite sensor
+k1312,Posture identification
+k1313,Sitting posture
+k1314,Strain gauge
+k1315,Criteria pollutants
+k1316,Electric vehicles
+k1317,Environmental impact
+k1318,Inversion
+k1319,Modeling and simulation
+k1320,Blast
+k1321,Diffusion MRI
+k1322,ENIGMA
+k1323,Military
+k1324,Traumatic brain injury
+k1325,Forefoot strike
+k1326,Metatarsophalangeal joint
+k1327,Midfoot
+k1328,Multi-segment foot
+k1329,Rearfoot strike
+k1330,Fiber optic sensors
+k1331,Noise reduction
+k1332,Phase modulation
+k1333,carbon nanotube
+k1334,cyclic voltammetry
+k1335,electrical resistivity
+k1336,microelectrode array
+k1337,neural probe
+k1338,CAD
+k1339,Computer-aided engineering model interaction
+k1340,Data translation
+k1341,Buckingham's Pi theorem
+k1342,Critical weld parameters
+k1343,Dimensional analysis
+k1344,Rosenthal equation
+k1345,Thermal modeling
+k1346,Mortar methods
+k1347,electric reliability
+k1348,ETR
+k1349,outage
+k1350,restoration
+k1351,severe weather
+k1352,foam
+k1353,impact
+k1354,multifunctional
+k1355,nanocomposite
+k1356,self-sensing
+k1357,signal drift
+k1358,Evans function
+k1359,Stability
+k1360,Travelling waves
+k1361,cross-talk
+k1362,flexible tactile sensor array
+k1363,scalable
+k1364,soft body sensing
+k1365,soft robot
+k1366,antireflective
+k1367,light blocking
+k1368,atrium
+k1369,cavoatrial junction
+k1370,laser
+k1371,PICC
+k1372,stylet
+k1373,superior vena cava
+k1374,Access density
+k1375,Conditional Autoregressive (CAR) model
+k1376,Macro level safety modeling
+k1377,Road network patterns
+k1378,Signal density
+k1379,Suburban arterials
+k1380,endurance time
+k1381,machine learning
+k1382,prediction
+k1383,questionnaire data
+k1384,Crystallographic Texture
+k1385,Grain boundary engineering
+k1386,Grain boundary network
+k1387,Microstructure Design
+k1388,Triple Junction
+k1389,Coanda effect
+k1390,Firefighter safety
+k1391,Flame attachment on slopes
+k1392,Safe separation distance
+k1393,human-robot interaction
+k1394,swarms
+k1395,Earthquake
+k1396,Landslide
+k1397,LIDAR
+k1398,Liquefaction
+k1399,Structure-from-motion
+k1400,cell-free protein synthesis
+k1401,coarse-grain simulation
+k1402,PEG
+k1403,PEGylation
+k1404,site-specific
+k1405,unnatural amino acid
+k1406,Debugging
+k1407,Field-Programmable Gate Array
+k1408,High-Level Synthesis
+k1409,Finite element model (FEM)
+k1410,robotic surgery
+k1411,suture
+k1412,wound closure
+k1413,Cysteine detection
+k1414,Mercury(II) colorimetric sensor
+k1415,Pyrimidine
+k1416,Delay
+k1417,Extended Kalman filter
+k1418,Phasor measurement unit
+k1419,Collaborative design
+k1420,Group dynamics
+k1421,Multi-user CAD
+k1422,Ashby methods
+k1423,Energy absorption
+k1424,Foam
+k1425,Football helmet
+k1426,Materials selection
+k1427,Axial force
+k1428,Power
+k1429,CAD Database
+k1430,Interoperability
+k1431,Multi-User
+k1432,PLM
+k1433,Effective area shape
+k1434,horn antennas
+k1435,superdirectivity
+k1436,Dam
+k1437,Dam operation
+k1438,Reservoir
+k1439,Reservoir capacity
+k1440,Sedimentation
+k1441,Bloom’s Taxonomy
+k1442,Design Culture
+k1443,Design Education
+k1444,Industrial Design
+k1445,Participatory Learning
+k1446,Applied learning
+k1447,Experiential Learning
+k1448,Field Trip
+k1449,Pedagogy
+k1450,Chunking
+k1451,Frameworks
+k1452,Information Reduction
+k1453,Insight
+k1454,Segmentation
+k1455,Aesthetics
+k1456,Cute
+k1457,Model
+k1458,Taste
+k1459,Advanced high strength steels (AHSS)
+k1460,Carbon steels
+k1461,High strength low alloy (HSLA) steels
+k1462,Joining
+k1463,Oxide dispersion strengthened (ODS) steels
+k1464,Stainless steels
+k1465,Corrosion resistance
+k1466,Crack healing
+k1467,Friction stir processing
+k1468,Origami
+k1469,Thermal Management
+k1470,Variable Emissivity
+k1471,Capabilities
+k1472,Excess
+k1473,Redesign
+k1474,Requirements
+k1475,Fault tolerace
+k1476,field programmable gate arrays
+k1477,neutron radiation effects
+k1478,static random access memory (SRAM) cells
+k1479,CubeSat
+k1480,Earth observation
+k1481,engineering design
+k1482,microwave remote sensing
+k1483,ocean winds
+k1484,small satellites
+k1485,system engineering
+k1486,Optical trapping
+k1487,Photophoresis
+k1488,Volumetric display
+k1489,BDI
+k1490,Commitment
+k1491,Graphical user interfaces
+k1492,Human-robot collaboration
+k1493,Human-robot interaction
+k1494,Human-robot teams
+k1495,Intent
+k1496,Intention
+k1497,Multi-objective path planing
+k1498,Plans
+k1499,Reasoning
+k1500,Replanning
+k1501,Tradeoffs
+k1502,Complaint mechanisms
+k1503,Cross-axis flexural pivot
+k1504,Cylindrical cross-axis flexural pivot
+k1505,Minimally invasive surgery
+k1506,Nitinol
+k1507,Pseudoelastic
+k1508,Superelastic
+k1509,Limit analysis
+k1510,Masonry shear-wall
+k1511,Masonry structures
+k1512,Strut-and-tie model
+k1513,Dry-stack
+k1514,Finite element model
+k1515,In-plane shear capacity
+k1516,Engineering design
+k1517,Self-efficacy
+k1518,Topic emotions
+k1519,Collaborative learning
+k1520,Computer-mediated-communication
+k1521,Systems engineering
+k1522,Virtual teams
+k1523,Distance learning
+k1524,Multi-university capstone
+k1525,Team performance
+k1526,Emissions
+k1527,Fire
+k1528,Soot formation
+k1529,ATR
+k1530,SfM
+k1531,Structure-from-Motion
+k1532,UAV
+k1533,finite element modeling
+k1534,Plaxis2D®
+k1535,quay wall
+k1536,wharf
+k1537,Conceptual blocks
+k1538,Design heuristics
+k1539,First year curriculum
+k1540,Service learning
+k1541,AA6111
+k1542,Butt-joint
+k1543,FSW
+k1544,High-Speed
+k1545,Mechanical
+k1546,Tensile
+k1547,Texture
+k1548,Antenna
+k1549,Measurement
+k1550,Propagation
+k1551,holography
+k1552,near-to-eye display
+k1553,waveguide optics
+k1554,cybersecurity
+k1555,graph-theory
+k1556,insider threat
+k1557,multiparty computation
+k1558,simulation
+k1559,state inference
+k1560,face recognition
+k1561,image processing
+k1562,object detection
+k1563,Stress-strain behavior
+k1564,Ballistic armor
+k1565,Dynamic testing
+k1566,Fiber Bragg gratings
+k1567,Interdisciplinary design
+k1568,Multidisciplinary design
+k1569,New product development
+k1570,Project based learning
+k1571,Virtual academic enterprise
+k1572,Eco-composite
+k1573,Kenaf
+k1574,Multi-level modelling
+k1575,Thermal conductivity
+k1576,Transient-electrothermal technique
+k1577,Anomaly Response
+k1578,Controller Training
+k1579,Flight Termination System
+k1580,Hazardous Commands
+k1581,Launch Safety
+k1582,Mission Control
+k1583,Mission Control Responsibilities
+k1584,Range Safety
+k1585,Spaceflight Controllers
+k1586,22q11.2 deletion syndrome
+k1587,diffusion anisotropy
+k1588,dMRI
+k1589,white matter
+k1590,Hyperparameter optimization
+k1591,Metalearning
+k1592,Aperiodic arrays
+k1593,array antennas
+k1594,peak sidelobe level (PSLL)
+k1595,rotated tiles
+k1596,Acceleration
+k1597,Impact detection
+k1598,Impact energy
+k1599,Impact velocity
+k1600,Piezoelectric foam
+k1601,Self-sensing foam
+k1602,Severity index
+k1603,Articulatory kinematics
+k1604,auditory feedback
+k1605,silent articulation
+k1606,voicing
+k1607,whisper
+k1608,Multipath channels
+k1609,radio propagation
+k1610,Kumamoto Earthquake
+k1611,Kumamoto water supply
+k1612,Lifeline damage
+k1613,Pipeline failure rates
+k1614,Water distribution network
+k1615,Conciseness
+k1616,language use
+k1617,professional writing
+k1618,word choice
+k1619,writing style
+k1620,Acoustic basis functions
+k1621,Cut-on phenomena.
+k1622,Cylindrical shell
+k1623,Radiation mode shapes
+k1624,Array effective resistance
+k1625,phased array antennas
+k1626,phased array feeds
+k1627,receiving efficiency
+k1628,scanned beams
+k1629,liquid composite molding
+k1630,Permeability
+k1631,vacuum infusion
+k1632,Analog-to-digital converter (ADC)
+k1633,capacitance measurement
+k1634,capacitor mismatch
+k1635,metal-oxide-metal (MoM) capacitor
+k1636,mismatch characterization
+k1637,BEM
+k1638,Dynamic refinement
+k1639,FEM
+k1640,Bragg gratings
+k1641,delamination
+k1642,nondestructive testing
+k1643,sensor systems
+k1644,tunable filters
+k1645,Application security
+k1646,Layered security
+k1647,Repairing Applications
+k1648,Secure software development
+k1649,Insertion loss
+k1650,Selective Laser Melting
+k1651,Surface roughness
+k1652,Waveguide attenuation
+k1653,employee turnover
+k1654,human resources
+k1655,Personality profile assessment
+k1656,Heat source method
+k1657,Model predictive control
+k1658,PID
+k1659,Temperature models
+k1660,Accuracy
+k1661,Microwave
+k1662,Mixed model analysis of variance
+k1663,Performance
+k1664,Signal
+k1665,Traffic volume
+k1666,Adaptive and intelligent educational systems
+k1667,Data and knowledge visualization
+k1668,Data mining
+k1669,Homework support systems
+k1670,Literature review
+k1671,Self-assessment technologies
+k1672,Adaptability
+k1673,Developing world
+k1674,Evolvability
+k1675,Improved cookstove
+k1676,Reconfigurability
+k1677,Reconfigure
+k1678,System design
+k1679,High Energy Physics
+k1680,Instrumentation
+k1681,Reliability
+k1682,Scrubbing
+k1683,Category-Analog Circuits
+k1684,Foam sensor
+k1685,Gait analysis
+k1686,Ground reaction force
+k1687,Wearable sensor
+k1688,Creativity
+k1689,Innovation
+k1690,Validity
+k1691,Ascending auctions
+k1692,Estimation of number of bidders
+k1693,Unobserved auction participation
+k1694,asthma
+k1695,indoor environmental quality
+k1696,Surgical instrument
+k1697,Femoroacetabular impingement
+k1698,Hip
+k1699,MRI
+k1700,Osteoarthritis
+k1701,Mixed-initiative interaction
+k1702,Topic modeling
+k1703,User study
+k1704,bad news
+k1705,directness
+k1706,Negative message buffer
+k1707,visuals
+k1708,Fluorescence sensing
+k1709,Optofluidics
+k1710,Pecvd
+k1711,SiO2
+k1712,Water absorption
+k1713,aerodynamics
+k1714,flow-structure interactions
+k1715,interfacial flows (free surface)
+k1716,Derivative superstructures
+k1717,Displacement patterns
+k1718,Enumeration
+k1719,Antenna radiation efficiency
+k1720,antenna total radiation efficiency
+k1721,measurement uncertainty
+k1722,millimeter wave
+k1723,openended waveguide (OEW)
+k1724,reverberation chamber (RC)
+k1725,wireless systems
+k1726,Aluminum alloys
+k1727,Joint properties
+k1728,Process responses
+k1729,collaborative design
+k1730,concurrent engineering
+k1731,Design Optimization
+k1732,Mobile Robots
+k1733,Soft Robots
+k1734,avionics
+k1735,beam testing
+k1736,BRAM
+k1737,EDAC
+k1738,IOB
+k1739,MMCM
+k1740,PLL
+k1741,SEE
+k1742,SERDES
+k1743,soft-error rate
+k1744,space
+k1745,Codon bias
+k1746,Language modeling
+k1747,Economic cycles
+k1748,Organizational issues
+k1749,Organizational learning
+k1750,Recession
+k1751,Algorithm
+k1752,Colored de Bruijn graph
+k1753,Phylogenetics
+k1754,Whole genome sequence
+k1755,De Bruijn graph
+k1756,Graph
+k1757,GWAS
+k1758,Polymorphism
+k1759,cooperation
+k1760,game theory
+k1761,Construction
+k1762,Experiential learning
+k1763,Bearings
+k1764,Bridge
+k1765,Damage
+k1766,Experimental analysis
+k1767,Fragility
+k1768,Incremental dynamic analysis
+k1769,Seismic behavior
+k1770,collaboration
+k1771,design intent
+k1772,heterogeneous CAD
+k1773,conventional cascode
+k1774,Differential stage
+k1775,low-power amplifier
+k1776,ultra-high voltage gain
+k1777,weak/moderate inversion
+k1778,"clean water, Village Drill"
+k1779,design for the developing world
+k1780,engineering for global development
+k1781,poverty alleviation
+k1782,asset rating
+k1783,climate normalization
+k1784,commercial buildings
+k1785,energy efficiency
+k1786,energy simulation
+k1787,Hierarchical spline spaces
+k1788,Local refinement and coarsening
+k1789,Phase field
+k1790,Tumor growth
+k1791,high-density
+k1792,modeling and simulation
+k1793,Multi-agent modeling
+k1794,UAV systems
+k1795,Crystal plasticity
+k1796,Dislocation pile-up
+k1797,Dual phase steel
+k1798,Representative volume element
+k1799,Superdislocation
+k1800,intrinsic film stress
+k1801,optical waveguides
+k1802,water absorption
+k1803,Air-bubble mixing
+k1804,Point-of-care
+k1805,Single molecule RNA detection
+k1806,Live fuels
+k1807,Shrub combustion
+k1808,Wildland fire modeling
+k1809,Electric distribution network
+k1810,LiDAR
+k1811,Outage prediction model
+k1812,Resilience
+k1813,Severe weather
+k1814,Vegetation management
+k1815,dynamic equivalent
+k1816,information
+k1817,manifold boundary approximation method
+k1818,system identification
+k1819,Cell therapy
+k1820,Endogenous TGase
+k1821,Micro-scaffold capsule
+k1822,Pathological liver
+k1823,Targeted cell delivery
+k1824,band gaps
+k1825,ferritin
+k1826,metal oxides
+k1827,nanoparticles
+k1828,synthesis
+k1829,manganese oxide
+k1830,Heterogeneous CAD
+k1831,MESH CAD
+k1832,Neutral Format
+k1833,3-omega
+k1834,Spider silk
+k1835,Synthetic silk
+k1836,Thermal characterization
+k1837,Transient electrothermal technique
+k1838,Essential tremor
+k1839,Impedance
+k1840,Parkinson’s disease
+k1841,System dynamics
+k1842,Tremor suppression
+k1843,available data
+k1844,Bayesian analysis
+k1845,designed experiments
+k1846,repeats and replicates
+k1847,automotive applications
+k1848,isogeometric analysis
+k1849,Kirchhoff-Love
+k1850,Reissner-Mindlin
+k1851,shells
+k1852,multi-objective decision making
+k1853,robot path-planning
+k1854,user interface design
+k1855,haptic feedback
+k1856,human-swarm interaction
+k1857,situation awareness
+k1858,Back projection
+k1859,Radar
+k1860,SAR tomography
+k1861,Synthetic aperture radar
+k1862,Vegetation scattering
+k1863,Dynamic data reconciliation
+k1864,Industrial data
+k1865,Kalman filter
+k1866,Moving horizon estimation
+k1867,Wired drillpipe
+k1868,Front-end planning (FEP)
+k1869,Planning
+k1870,Project definition rating index (PDRI)
+k1871,Risk management
+k1872,Scope definition
+k1873,Jet
+k1874,One dimensional turbulence
+k1875,Particle dispersion
+k1876,Friction stir spot welding
+k1877,Joint strength
+k1878,Material flow
+k1879,Process response
+k1880,Tool geometry
+k1881,Bayesian additive regression trees
+k1882,critical infrastructure outage modeling
+k1883,electric distribution network
+k1884,quantile regression forests
+k1885,weather hazards
+k1886,Elementary teacher education
+k1887,Technology education
+k1888,Failure modes
+k1889,Masonry prisms
+k1890,Nonlinear behavior
+k1891,Stiffness ratio
+k1892,Stress-strain relationship
+k1893,disordered nucleation
+k1894,flux penetration
+k1895,superconducting radio frequency cavities
+k1896,superheating field
+k1897,Electron backscattering diffraction (EBSD)
+k1898,In-situ
+k1899,receiving antenna
+k1900,superdirective antenna
+k1901,Algorithms
+k1902,Atria
+k1903,Skybridges
+k1904,Structural analysis
+k1905,Tall buildings
+k1906,Data association
+k1907,multiple target tracking (MTT)
+k1908,random sample consensus (RANSAC)
+k1909,Bed load
+k1910,Hydrologic information system
+k1911,Sediment
+k1912,Active integrated antenna (AIA)
+k1913,circular polarization (CP)
+k1914,harmonic suppression
+k1915,linear polarization (LP)
+k1916,patch antenna
+k1917,power added efficiency (PAE)
+k1918,Image analysis
+k1919,Liquid resin infusion
+k1920,Void transport
+k1921,Voids
+k1922,Design creativity
+k1923,Design synthesis
+k1924,Face-to-face selling
+k1925,Project-based learning
+k1926,Public assessment
+k1927,Copyright
+k1928,Design patent
+k1929,IP trends
+k1930,Live projects
+k1931,Sponsored projects
+k1932,Trademark
+k1933,Utility patent
+k1934,Experience design
+k1935,Holistic design
+k1936,Human centered design
+k1937,Bio plastic
+k1938,Bio-inspired design / biomimetics
+k1939,Ecodesign
+k1940,Social responsibility
+k1941,Sustainability
+k1942,Antarctic
+k1943,Arctic
+k1944,radar remote sensing
+k1945,sea ice
+k1946,Wildland fire
+k1947,Fires
+k1948,Flame-merging
+k1949,Method of moments
+k1950,epithelial cells
+k1951,kidney
+k1952,magnetic resonance imaging
+k1953,organ regeneration
+k1954,Recellularization
+k1955,Flat-Flame Burner
+k1956,Live fuel
+k1957,Flame - merging
+k1958,Drag reduction
+k1959,BRAM scrubbing
+k1960,configuration scrubbing
+k1961,Feedback TMR
+k1962,LEON3
+k1963,neutron beam test
+k1964,SEU mitigation
+k1965,soft processors
+k1966,TMR
+k1967,Boiling
+k1968,Droplet impingement
+k1969,Barrier layer
+k1970,Ellipsometry
+k1971,Extreme ultraviolet
+k1972,Genetic algorithm
+k1973,Hydrogen etch
+k1974,Mirrors
+k1975,Ultraviolet
+k1976,Finishing contractors
+k1977,Lean construction
+k1978,Lean implementation
+k1979,Subcontractors
+k1980,Relational contracting
+k1981,Unethical behavior
+k1982,Combined heat and power
+k1983,Combined scheduling and control
+k1984,Optimal control
+k1985,Optimal design
+k1986,Ash aerosol
+k1987,Fouling ash
+k1988,Minimum recycled flue gas
+k1989,Oxy-fuel combustion
+k1990,Char oxidation
+k1991,Kinetics
+k1992,Oxy-fuel
+k1993,Sensitivity analysis
+k1994,Conducting polymer
+k1995,Electrochemical energy storage
+k1996,Electrode
+k1997,Organic battery
+k1998,Radical polymer
+k1999,Redox flow battery
+k2000,Amperometric sensing
+k2001,Electrochemical
+k2002,Platinum
+k2003,Biosensing
+k2004,lab-on-chip
+k2005,Microfabrication
+k2006,Vascular stent
+k2007,Convergence
+k2008,Emergent behavior
+k2009,Leader placement
+k2010,Robotic swarms
+k2011,Comprehensive modeling
+k2012,Oxy-coal
+k2013,Single-particle combustion
+k2014,Friction stir scribe joining
+k2015,AA7075
+k2016,Corrosion
+k2017,EXCO
+k2018,SEM
+k2019,Cruise control
+k2020,decentralized control
+k2021,linear feedback control systems
+k2022,motion control/collision avoidance
+k2023,FFT
+k2024,Photothermal
+k2025,Thermal diffusivity
+k2026,Thermometry
+k2027,Formability
+k2028,Magnesium alloy
+k2029,AA6022
+k2030,Aluminum to steel joining
+k2031,Friction stir scribe
+k2032,Mild steel
+k2033,Surfalex 6s
+k2034,Ultra high strength steel
+k2035,Linear systems
+k2036,minimal realization theory
+k2037,systems biology
+k2038,Crop diversification
+k2039,Cropping systems models
+k2040,Dryland cropping systems
+k2041,Herbicide resistant weeds
+k2042,No-till
+k2043,Residue management
