@@ -9,7 +9,6 @@ from rdflib import Graph
 import pandas as pd
 from rdflib import Namespace
 from rdflib import Literal
-from tqdm import tqdm
 
 
 # In[2]:
@@ -116,9 +115,6 @@ Review_Papers = Reviews.set_index('idA').join(Author.set_index('id')).set_index(
 
 Review_Papers.head()
 
-Author.rename(columns={"id": "idA"}, inplace=True)
-Author_Papers = Author.join(Author_by.set_index('idA'), on="idA").join(Papers.set_index('id'), on="idP")
-Author_Papers['idP']=Author_Papers['idP'].map('p{}'.format)
 
 # In[14]:
 
@@ -152,15 +148,9 @@ g.add((KG.Journal, KG.JournalRelatedTo, KG.SubjectArea))
 for k in range(len(Journal_Keyword['keyword'])):
     g.add((Literal(Journal_Keyword['journal'][k]), KG.JournalRelatedTo, Literal(Journal_Keyword['keyword'][k])))
 
-for index, row in Author_Papers.iterrows():
-    id_paper = row['idP']
-    id_author = row['idA']
-    g.add((KG[id_author], RDF.type, KG.Author))  # this creates "name" as a type of Author
-    g.add((KG[id_paper], RDF.type, KG.Paper))  # this creates "title" as a type of Paper
-    g.add((KG[id_author], KG.participatedIn, KG[id_paper]))  # creates link between
-    # paper/name
-    g.add((KG[id_paper], KG.title, Literal(row['title'])))  # adds human-readable string
-    g.add((KG[id_author], KG.name, Literal(row['name'])))  # adds human-readable string
+g.add((KG.Conference, KG.ConferenceRelatedTo, KG.SubjectArea))
+for k in range(len(Paper_volume['keyword'])):
+    g.add((Literal(Paper_volume['conference'][k]), KG.ConferenceRelatedTo, Literal(Paper_volume['keyword'][k])))
 
 g.add((KG.Journal, KG.published, KG.Volume))
 for k in range(len(Journal_Keyword['journal'])):
