@@ -61,13 +61,13 @@ for index, row in Journals.iterrows():
     g.add((KG[id_J], RDF.type, KG.Journal))
     g.add((KG[id_J], KG.title, Literal(title)))
 
-# TODO: TOBX add Journal volume
 for index, row in JVolumes.iterrows():
     id_J = row['idJ']
     id_JV = row['idJV']
     volume = row['volume']
-    g.add((KG[id_J], KG.Volume, KG[id_JV]))
-    g.add((KG[id_JV], KG.title, Literal(volume)))
+    date = row['date']
+    g.add((KG[id_J], KG.published, KG[id_JV]))
+    g.add((KG[id_JV], RDFS.label, Literal(f"{volume}, {date}")))
 
 for index, row in Conferences_type.iterrows():
     id_conf = row['idC']
@@ -90,9 +90,10 @@ for index, row in Conferences.iterrows():
 for index, row in CEditions.iterrows():
     id_CE = row['idCE']
     id_C = row['idC']
+    city = row['city']
     date = row['date']
-    g.add((KG[id_J], KG.Volume, KG[id_JV]))
-    g.add((KG[id_JV], RDFS.label, Literal(volume)))
+    g.add((KG[id_C], KG.published, KG[id_CE]))
+    g.add((KG[id_CE], RDFS.label, Literal(f"{city}, {date}")))
 
 # TODO: CSV Papers to show specific volume (idJV) or edition (idCE) (not which idJ or idC)
 for index, row in Papers.iterrows():
@@ -119,8 +120,6 @@ for index, row in Editors.iterrows():
     g.add((KG[id_Editor], KG.edits, KG[id_J]))
 
 # TODO: CSV Reviews.csv, change idP to idS
-# TODO: in TBOX add Review as a class to keep track of a specific review related to a submission
-# TODO: in TBOX change property of reviewed
 for index, row in Reviews.iterrows():
     id_A = row['idA']
     id_S = row['idS']
@@ -133,7 +132,7 @@ for index, row in Reviews.iterrows():
     g.add((KG[id_A], RDF.type, KG.Reviewer))
     g.add((KG[id_R], RDF.type, KG.ReviewContent))
     g.add((KG[id_A], KG.reviewed, KG[id_R]))
-    g.add((KG[id_R], KG.review, KG[id_S]))
+    g.add((KG[id_R], KG.reviewOf, KG[id_S]))
     g.add((KG[id_R], KG.commented, Literal(comment)))
     g.add((KG[id_R], KG.decided, Literal(decided)))
 
@@ -150,23 +149,29 @@ for index, row in Keyword_paper.iterrows():
     id_P = row['idP']
     g.add((KG[id_P], KG.paperRelatedTo, KG[id_K]))
 
-# TODO: CSV add new file Keyword_conference.csv
+# TODO: CSV add new file Keyword_conference.csv linking keyword (idK) to conferences (idC)
 for index, row in Keyword_conference.iterrows():
     id_K = row['idK']
     id_P = row['idC']
     g.add((KG[id_C], KG.venueRelatedTo, KG[id_K]))
 
-# TODO: CSV add new file Keyword_journal.csv
+# TODO: CSV add new file Keyword_journal.csv linking keyword (idK) to journals (idJ)
 for index, row in Keyword_journal.iterrows():
     id_K = row['idK']
     id_P = row['idJ']
     g.add((KG[id_J], KG.venueRelatedTo, KG[id_K]))
 
-# TODO: CSV add new file Editor_reviewers.csv showing which editor assigned which reviewer
-# TODO: ABOX add editor/reviewer code
+# TODO: CSV add new file Editor_reviewers.csv showing which editor (idJE) assigned which reviewer (idA)
+for index, row in Editor_reviewers.iterrows():
+    id_JE = row['idJE']
+    id_Reviewer = row['idA']
+    g.add((KG[id_JE], KG.assigned, KG[id_Reviewer]))
 
-# TODO: CSV add new file Chair_reviewers.csv showing which chair assigned which reviewer
-# TODO: ABOX add chair/reviewer code
+# TODO: CSV add new file Chair_reviewers.csv showing which chair (idCC) assigned which reviewer (idA)
+for index, row in Editor_reviewers.iterrows():
+    id_Chair = row['idCC']
+    id_Reviewer = row['idA']
+    g.add((KG[id_Chair], KG.assigned, KG[id_Reviewer]))
 
 
 # for index, row in Paper_Submissions.iterrows():
