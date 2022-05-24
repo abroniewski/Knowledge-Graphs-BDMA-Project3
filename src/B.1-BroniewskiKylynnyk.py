@@ -48,8 +48,12 @@ def create_TBOX():
     graph.add((KG.submitted, RDFS.label, Literal("submitted")))
 
     graph.add((KG.publishedIn, RDFS.domain, KG.Submission))
-    graph.add((KG.publishedIn, RDFS.range, KG.Venue))
-    graph.add((KG.publishedIn, RDFS.label, Literal("publishedIn")))
+    graph.add((KG.publishedIn, RDFS.range, KG.Collection))
+    graph.add((KG.publishedIn, RDFS.label, Literal("published in")))
+
+    graph.add((KG.submittedTo, RDFS.domain, KG.Submission))
+    graph.add((KG.submittedTo, RDFS.range, KG.Venue))
+    graph.add((KG.submittedTo, RDFS.label, Literal("submitted to")))
 
 
     #################################################################
@@ -211,17 +215,24 @@ def create_TBOX():
     graph.add((KG.assigned, RDFS.comment, Literal("Each class assigning a reviewer should assign at least 2 "
                                                   "reviewers")))
 
+    graph.add((KG.ReviewContent, RDF.type, RDFS.Class))
+    graph.add((KG.ReviewContent, RDFS.label, Literal("Review content")))
+
+    graph.add((KG.reviewOf, RDFS.domain, KG.ReviewContent))
+    graph.add((KG.reviewOf, RDFS.range, KG.Submission))
+    graph.add((KG.reviewOf, RDFS.label, Literal("review of")))
+
     graph.add((KG.reviewed, RDFS.domain, KG.Reviewer))
-    graph.add((KG.reviewed, RDFS.range, KG.Submission))
+    graph.add((KG.reviewed, RDFS.range, KG.reviewOf))
     graph.add((KG.reviewed, RDFS.label, Literal("reviewed")))
 
-    graph.add((KG.commented, RDFS.domain, KG.Reviewer))
+    graph.add((KG.commented, RDFS.domain, KG.ReviewContent))
     graph.add((KG.commented, RDFS.range, XSD.string))
     graph.add((KG.commented, RDFS.label, Literal("commented")))
     graph.add((KG.commented, RDFS.comment, Literal("The string provides all the commentary available as part of the "
                                                    "review")))
 
-    graph.add((KG.decided, RDFS.domain, KG.Reviewer))
+    graph.add((KG.decided, RDFS.domain, KG.ReviewContent))
     graph.add((KG.decided, RDFS.range, XSD.boolean))
     graph.add((KG.decided, RDFS.label, Literal("decided")))
     graph.add((KG.decided, RDFS.comment, Literal("The decision is a boolean where True means the paper is accepted "

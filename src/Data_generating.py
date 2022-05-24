@@ -21,10 +21,10 @@ warnings.filterwarnings('ignore')
 # In[51]:
 
 
-Papers = pd.read_csv('../data/processed/Papers.csv')
-Conferences = pd.read_csv('../data/processed/Conferences.csv')
-Authors = pd.read_csv('../data/processed/Authors.csv')
-
+Papers = pd.read_csv('../data/raw/publication-data/Papers.csv')
+Conferences = pd.read_csv('../data/raw/publication-data/Conferences.csv')
+Authors = pd.read_csv('../data/raw/publication-data/Authors.csv')
+Reviews = pd.read_csv('../data/raw/publication-data/Reviews.csv')
 
 # In[12]:
 
@@ -44,7 +44,7 @@ def types_creation_paper(Paper):
             Paper['type'][a] = "poster"
             
 #the colums id is the id of each journal         
-    Paper[['id', 'type']].to_csv('../data/processed/Papers_type.csv',index=False)
+    Paper[['idP', 'type']].to_csv('../data/processed/Papers_type.csv',index=False)
 
 
 # In[13]:
@@ -64,7 +64,7 @@ def types_creation_conference(Conference):
            Conference['type'][a] = random.choice(types)
             
 #the colums id is the id of each conference         
-    Conference[['id', 'type']].to_csv('../data/processed/Conferences_type.csv',index=False)
+    Conference[['idC', 'type']].to_csv('../data/raw/publication-data/Conferences_type.csv',index=False)
 
 
 # In[15]:
@@ -87,7 +87,7 @@ def submition_data_creation(Paper):
         Submition['idS'][a] = f's{a}'
         Submition['idP'][a] = f'p{a}'
         
-    Submition.to_csv('../data/processed/Submitions.csv',index=False)
+    Submition.to_csv('../data/raw/publication-data/Submissions.csv',index=False)
 
 
 # In[44]:
@@ -99,10 +99,9 @@ submition_data_creation(Papers)
 # In[78]:
 
 
-def submition_data_creation(Paper , Author ):
+def submission_data_creation(Paper, Author):
     
     amount_of_papers = len(Papers['title'])
-    print(amount_of_papers)
     Reviewers = pd.DataFrame({'name' : [None] *2*amount_of_papers, 'idR': [None] *2*amount_of_papers, 
                               'idP': [None] *2*amount_of_papers})
     Paper[['idP']] = ""
@@ -117,13 +116,13 @@ def submition_data_creation(Paper , Author ):
         
     Reviewers.join(Paper.set_index('idP'), on='idP')
 
-    Reviewers.to_csv('../data/processed/Reviewers.csv',index=False)
+    Reviewers.to_csv('../data/raw/publication-data/Reviewers.csv',index=False)
 
 
 # In[ ]:
 
 
-submition_data_creation(Papers , Authors )
+submission_data_creation(Papers, Authors)
 
 
 # In[87]:
@@ -138,7 +137,7 @@ def chair_data_creadion(Paper, Author):
         Chairs['idCC'][a] = f'cc{a}'
         Chairs['name'][a] = random.choice(Author['name'])
         
-    Chairs.to_csv('../data/processed/Chairs.csv',index=False)        
+    Chairs.to_csv('../data/raw/publication-data/Chairs.csv',index=False)
 
 
 # In[88]:
@@ -159,7 +158,7 @@ def chair_data_creadion(Paper, Author):
         Editor['idJE'][a] = f'je{a}'
         Editor['name'][a] = random.choice(Author['name'])
         
-    Editor.to_csv('../data/processed/Editors.csv',index=False)
+    Editor.to_csv('../data/raw/publication-data/Editors.csv',index=False)
 
 
 # In[90]:
