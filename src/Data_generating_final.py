@@ -1,8 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
 
 import random
 import pandas as pd  
@@ -10,22 +5,11 @@ import math
 import warnings
 random.seed(5)
 
-
-# In[2]:
-
-
 # ignore the warning
 warnings.filterwarnings('ignore')
 
-
-# In[3]:
-
-
 filepath = '../data/raw/publication-data/'
-
-
-# In[115]:
-
+outpath = '../data/processed/'
 
 Papers = pd.read_csv(f"{filepath}Papers.csv")
 Conferences = pd.read_csv(f"{filepath}Conferences.csv")
@@ -34,10 +18,6 @@ Keyword_paper = pd.read_csv(f"{filepath}Keyword_paper.csv")
 Keywords = pd.read_csv(f"{filepath}Keywords.csv")
 Journals = pd.read_csv(f"{filepath}Journals.csv")
 Reviews = pd.read_csv(f"{filepath}Reviews.csv")
-
-
-# In[12]:
-
 
 def types_creation_paper(Paper):
     Paper['type'] = ""
@@ -54,16 +34,10 @@ def types_creation_paper(Paper):
             Paper['type'][a] = "poster"
             
 #the colums id is the id of each journal         
-    Paper[['id', 'type']].to_csv(f"{filepath}Papers_type.csv",index=False)
-
-
-# In[13]:
+    Paper[['id', 'type']].to_csv(f"{outpath}Papers_type.csv",index=False)
 
 
 types_creation_paper(Papers)
-
-
-# In[14]:
 
 
 def types_creation_conference(Conference):
@@ -74,16 +48,10 @@ def types_creation_conference(Conference):
            Conference['type'][a] = random.choice(types)
             
 #the colums id is the id of each conference         
-    Conference[['id', 'type']].to_csv(f"{filepath}Conferences_type.csv",index=False)
-
-
-# In[15]:
+    Conference[['id', 'type']].to_csv(f"{outpath}Conferences_type.csv",index=False)
 
 
 types_creation_conference(Conferences)
-
-
-# In[43]:
 
 
 def submition_data_creation(Paper):
@@ -97,46 +65,39 @@ def submition_data_creation(Paper):
         Submition['idS'][a] = f's{a}'
         Submition['idP'][a] = f'p{a}'
         
-    Submition.to_csv(f"{filepath}Submitions.csv",index=False)
-
-
-# In[44]:
+    Submition.to_csv(f"{outpath}Submitions.csv",index=False)
 
 
 submition_data_creation(Papers)
 
 
-# In[11]:
-
-
 def reviewer_data_creation(Paper , Author ):
     
     amount_of_papers = len(Papers['title'])
-    Reviewers = pd.DataFrame({'reviewer' : [None] *2*amount_of_papers, 'idR': [None] *2*amount_of_papers, 
+    Reviewers = pd.DataFrame({'idR' : [None] *2*amount_of_papers, 'idA': [None] *2*amount_of_papers,
                               'idS': [None] *2*amount_of_papers})
     Paper[['idS']] = ""
+    Paper.rename(columns={'id': 'idP'}, inplace=True)
+    Author.rename(columns={'id': 'idA'}, inplace=True)
     
     for a in range(amount_of_papers):
         Paper['idP'][a] = f'p{a}'
         
     for a in range(amount_of_papers*2):
-        Reviewers['reviewer'][a] = random.choice(Author['name'])
-        Reviewers['idR'][a] = f'r{a}'
+        Reviewers['idR'][a] = random.choice(Author['idA'])
+        # Reviewers['idR'][a] = f'r{a}'
+        # TODO: Why are we assigning the same submission to same paper?
         Reviewers['idS'][a] = f's{math.floor(a/2)}'
         
-    Reviewers = Reviewers.set_index('reviewer').join(Author.set_index('name')).reset_index()
-    Reviewers.rename(columns = {'index':'reviewer'}, inplace = True)
+    Reviewers = Reviewers.set_index('idA').join(Author.set_index('idA')).reset_index()
+    Reviewers.rename(columns = {'index': 'reviewer'}, inplace = True)
     
-    Reviewers.to_csv(f"{filepath}Reviewers.csv",index=False)
-
-
-# In[12]:
-
+    Reviewers.to_csv(f"{outpath}Reviewers.csv",index=False)
+    Author.to_csv(f"{outpath}Authors.csv",index=False)
+    Paper.to_csv(f"{outpath}Papers.csv", index=False)
 
 reviewer_data_creation(Papers , Authors )
-
-
-# In[87]:
+Papers = pd.read_csv(f"{outpath}Papers.csv")
 
 
 def chair_data_creadion(Paper, Author):
@@ -148,16 +109,10 @@ def chair_data_creadion(Paper, Author):
         Chairs['idCC'][a] = f'cc{a}'
         Chairs['chair'][a] = random.choice(Author['name'])
         
-    Chairs.to_csv(f"{filepath}Chairs.csv",index=False)        
-
-
-# In[88]:
+    Chairs.to_csv(f"{outpath}Chairs.csv",index=False)
 
 
 chair_data_creadion(Papers, Authors)
-
-
-# In[89]:
 
 
 def editor_data_creadion(Paper, Author):
@@ -169,93 +124,71 @@ def editor_data_creadion(Paper, Author):
         Editor['idJE'][a] = f'je{a}'
         Editor['editor'][a] = random.choice(Author['name'])
         
-    Editor.to_csv(f"{filepath}Editors.csv",index=False)
-
-
-# In[90]:
+    Editor.to_csv(f"{outpath}Editors.csv",index=False)
 
 
 editor_data_creadion(Papers, Authors)
 
 
-# In[82]:
 
-
-def keywords_journal_set(Paper, Keyword_paper,Journal, Keywords ):
+def keywords_journal_set(Paper, Keyword_paper, Journal, Keywords):
     
     Paper = pd.DataFrame(Paper[Paper['confjournal'] == 'Journal'])
     Paper = Paper.set_index('idP').join(Keyword_paper.set_index('idP'), how='inner').reset_index('idP')
+    # TODO: the next join returns nothing because the idK of keywords does not have the "k" in the id.
     Paper = Paper.set_index('idK').join(Keywords.set_index('idK'), how='inner').reset_index('idK')
     Paper = Journal.set_index('idJ').join(Paper.set_index('idEidV'), how='inner').reset_index()
-    Paper.rename(columns = {'index':'idJ'}, inplace = True)
+    Paper.rename(columns = {'idEidV':'idJ'}, inplace = True)
         
-    Paper[['journal','idJ','idP', 'title', 'idK', 'keyword' ]].to_csv(f"{filepath}Keyword_journal.csv",index=False)
-
-
-# In[85]:
-
+    Paper[['idJ', 'idK']].to_csv(f"{outpath}Keyword_journal.csv",index=False)
+    Paper.to_csv(f"{outpath}Paper.csv",index=False)
 
 keywords_journal_set(Papers, Keyword_paper,Journals, Keywords )
-
-
-# In[88]:
+Papers = pd.read_csv(f"{outpath}Papers.csv")
 
 
 def keywords_conference_set(Paper, Keyword_paper,Conference, Keywords ):
     
     Paper = pd.DataFrame(Paper[Paper['confjournal'] == 'Conference'])
     Paper = Paper.set_index('idP').join(Keyword_paper.set_index('idP'), how='inner').reset_index('idP')
+    # TODO: remove, these two are just joining with the string keyword and titles
     Paper = Paper.set_index('idK').join(Keywords.set_index('idK'), how='inner').reset_index('idK')
     Paper = Conference.set_index('idC').join(Paper.set_index('idEidV'), how='inner').reset_index()
-    Paper.rename(columns = {'index':'idC'}, inplace = True)
+    Paper.rename(columns = {'idEidV':'idC'}, inplace = True)
         
-    Paper[['conference','idC','idP', 'title', 'idK', 'keyword' ]].to_csv(f"{filepath}Keyword_conference.csv",index=False)
-
-
-# In[89]:
+    Paper[['idC','idK']].to_csv(f"{outpath}Keyword_conference.csv",index=False)
+    Paper.to_csv(f"{outpath}Paper.csv", index=False)
 
 
 keywords_conference_set(Papers, Keyword_paper,Conferences, Keywords )
 
 
-# In[ ]:
-
-
 #using already generated csv to generate new ones
-
-
-# In[134]:
-
-
-Reviewers = pd.read_csv(f"{filepath}Reviewers.csv")
-Submitions = pd.read_csv(f"{filepath}Submitions.csv")
-Editors = pd.read_csv(f"{filepath}Editors.csv")
-Chairs = pd.read_csv(f"{filepath}Chairs.csv")
+Reviewers = pd.read_csv(f"{outpath}Reviewers.csv")
+Papers = pd.read_csv(f"{outpath}Papers.csv")
+Submitions = pd.read_csv(f"{outpath}Submitions.csv")
+Editors = pd.read_csv(f"{outpath}Editors.csv")
+Chairs = pd.read_csv(f"{outpath}Chairs.csv")
 JVolumes = pd.read_csv(f"{filepath}JVolumes.csv")
 CEditions = pd.read_csv(f"{filepath}CEditions.csv")
 
 
-# In[138]:
-
-
 def editor_reviewer_set(Reviewers, Submitions, Papers, JVolumes, Editors ):
-    
+
+    amount_of_journals = len(JVolumes['volume'])
+    for a in range(amount_of_journals):
+        JVolumes['idJ'][a] = f'j{a}'
+
     Reviewers = Reviewers.set_index('idS').join(Submitions.set_index('idS')).reset_index('idS')
     Reviewers = Reviewers.set_index('idP').join(Papers[['idEidV','idP']].set_index('idP')).reset_index('idP')
-    Reviewers = JVolumes.set_index('idJV').join(Reviewers.set_index('idEidV')).reset_index()
+    Reviewers = JVolumes.set_index('idJ').join(Reviewers.set_index('idEidV')).reset_index()
     Editors = Editors.set_index('idJ').join(Reviewers.set_index('idJ')).reset_index()
     Editors.rename(columns = {'index':'idJV'}, inplace = True)
     
-    Editors[['editor','idJE', 'idJ', 'reviewer','idR','idJV', 'idP'  ]].to_csv(f"{filepath}Editor_reviewers.csv",index=False)
-
-
-# In[139]:
+    Editors[['editor','idJE', 'idJ', 'reviewer','idR','idJV', 'idP'  ]].to_csv(f"{outpath}Editor_reviewers.csv",index=False)
 
 
 editor_reviewer_set(Reviewers, Submitions, Papers, JVolumes, Editors )
-
-
-# In[144]:
 
 
 def chair_reviewer_set(Reviewers, Submitions, Papers, CEditions, Chairs ):
@@ -266,18 +199,16 @@ def chair_reviewer_set(Reviewers, Submitions, Papers, CEditions, Chairs ):
     Chairs = Chairs.set_index('idC').join(Reviewers.set_index('idC')).reset_index()
     Chairs.rename(columns = {'index':'idCE'}, inplace = True)
     
-    Chairs[['chair','idCC', 'idC', 'reviewer','idR','idCE', 'idP'  ]].to_csv(f"{filepath}Chair_reviewers.csv",index=False)
-
-
-# In[145]:
+    Chairs[['chair','idCC', 'idC', 'reviewer','idR','idCE', 'idP'  ]].to_csv(f"{outpath}Chair_reviewers.csv",index=False)
 
 
 chair_reviewer_set(Reviewers, Submitions, Papers, CEditions, Chairs )
 
+
 def modify_reviews_id(Review, Submition):
     
     Review = Review.join(Submition.set_index('idP'), on="idP")
-    Review[['idA', 'idS', 'decision', 'content']].to_csv(f"{filepath}Reviews.csv",index=False)
+    Review[['idA', 'idS', 'decision', 'content']].to_csv(f"{outpath}Reviews.csv",index=False)
 
     
 modify_reviews_id(Reviews, Submitions)
