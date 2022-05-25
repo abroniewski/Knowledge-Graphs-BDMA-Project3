@@ -33,6 +33,7 @@ Authors = pd.read_csv(f"{filepath}Authors.csv")
 Keyword_paper = pd.read_csv(f"{filepath}Keyword_paper.csv")
 Keywords = pd.read_csv(f"{filepath}Keywords.csv")
 Journals = pd.read_csv(f"{filepath}Journals.csv")
+Reviews = pd.read_csv(f"{filepath}Reviews.csv")
 
 
 # In[12]:
@@ -122,6 +123,9 @@ def reviewer_data_creation(Paper , Author ):
         Reviewers['reviewer'][a] = random.choice(Author['name'])
         Reviewers['idR'][a] = f'r{a}'
         Reviewers['idS'][a] = f's{math.floor(a/2)}'
+        
+    Reviewers = Reviewers.set_index('reviewer').join(Author.set_index('name')).reset_index()
+    Reviewers.rename(columns = {'index':'reviewer'}, inplace = True)
     
     Reviewers.to_csv(f"{filepath}Reviewers.csv",index=False)
 
@@ -270,3 +274,11 @@ def chair_reviewer_set(Reviewers, Submitions, Papers, CEditions, Chairs ):
 
 chair_reviewer_set(Reviewers, Submitions, Papers, CEditions, Chairs )
 
+def modify_reviews_id(Review, Submition):
+    
+    Review = Review.join(Submition.set_index('idS'), on="idS")
+    Review[['idA', 'idS', 'decision', 'content']].to_csv(f"{filepath}Reviews.csv",index=False)
+
+    
+modify_reviews_id(Reviews, Submitions)
+    
