@@ -276,7 +276,7 @@ chair_reviewer_set(Reviewers, Submitions, Papers, CEditions, Chairs )
 
 def modify_reviews_id(Review, Submition):
     
-    Review = Review.join(Submition.set_index('idS'), on="idS")
+    Review = Review.join(Submition.set_index('idP'), on="idP")
     Review[['idA', 'idS', 'decision', 'content']].to_csv(f"{filepath}Reviews.csv",index=False)
 
     
