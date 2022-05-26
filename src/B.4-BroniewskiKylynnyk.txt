@@ -1,16 +1,22 @@
 # Querying the ontology
 
 # 1. Find all Authors.
-@prefix :     <http://example.org/> .
-SELECT ?author
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX :   <http://KG-SDM-Lab3.org/>
+
+SELECT ?authorName
 WHERE
 {
-    ?author rdfs:type :Author .
+    ?author rdf:type :Author .
+    ?author rdfs:label ?authorName
 }
 
 
+
 # 2. Find all properties whose domain is Author.
-@prefix :     <http://example.org/> .
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX :   <http://KG-SDM-Lab3.org/>
+
 SELECT ?properties
 WHERE
 {
@@ -19,7 +25,9 @@ WHERE
 
 
 # 3. Find all properties whose domain is either Conference or Journal.
-@prefix :     <http://example.org/> .
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX :   <http://KG-SDM-Lab3.org/>
+
 SELECT ?properties
 WHERE
 {
@@ -33,14 +41,14 @@ WHERE
 
 given_author = "Firstname Lastname"
 
-@prefix :     <http://example.org/> .
+@prefix :     <http://KG-SDM-Lab3.org/> .
 SELECT ?papers
 WHERE
 {
     ?paper      rdf:type        :Paper ;
                 :submitted      ?submission .
-    ?author     rdf:type        :author ;
-                rdf:label       given_author
+    ?author     rdf:type        :Author ;
+    		    rdfs:label      "Findlater L." ;
                 :participatedIn ?paper .
     ?submission rdf:type        :Submission ;
                 :publishedIn    ?venue .
