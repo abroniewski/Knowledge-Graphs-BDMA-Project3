@@ -7,16 +7,19 @@ from rdflib import Literal
 
 #%% Import CSVs
 filepath = '../data/raw/publication-data/'
-Affiliations = pd.read_csv(f"{filepath}Affiliations.csv")
 Authored_by = pd.read_csv(f"{filepath}Authored_by.csv")
 Authors = pd.read_csv(f"{filepath}Authors.csv")
 CEditions = pd.read_csv(f"{filepath}CEditions.csv")
+Chair_reviewers = pd.read_csv(f"{filepath}Chair_reviewers.csv")
 Chairs = pd.read_csv(f"{filepath}Chairs.csv")
 Conferences = pd.read_csv(f"{filepath}Conferences.csv")
 Conferences_type = pd.read_csv(f"{filepath}Conferences_type.csv")
+Editor_reviewers = pd.read_csv(f"{filepath}Editor_reviewers.csv")
 Editors = pd.read_csv(f"{filepath}Editors.csv")
 Journals = pd.read_csv(f"{filepath}Journals.csv")
 JVolumes = pd.read_csv(f"{filepath}JVolumes.csv")
+Keyword_conference = pd.read_csv(f"{filepath}Keyword_conference.csv")
+Keyword_journal = pd.read_csv(f"{filepath}Keyword_journal.csv")
 Keyword_paper = pd.read_csv(f"{filepath}Keyword_paper.csv")
 Keywords = pd.read_csv(f"{filepath}Keywords.csv")
 Papers = pd.read_csv(f"{filepath}Papers.csv")
@@ -121,8 +124,8 @@ for index, row in Editors.iterrows():
 
 # TODO: CSV Reviews.csv, change idP to idS
 for index, row in Reviews.iterrows():
-    id_A = row['idA']
-    id_S = row['idS']
+    id_A = str(row['idA'])
+    id_S = str(row['idS'])
     id_R = id_S + id_A
     comment = row['content']
     if row['decision'] == "Accepted":
@@ -164,13 +167,13 @@ for index, row in Keyword_journal.iterrows():
 # TODO: CSV add new file Editor_reviewers.csv showing which editor (idJE) assigned which reviewer (idA)
 for index, row in Editor_reviewers.iterrows():
     id_JE = row['idJE']
-    id_Reviewer = row['idA']
+    id_Reviewer = row['idR']
     g.add((KG[id_JE], KG.assigned, KG[id_Reviewer]))
 
 # TODO: CSV add new file Chair_reviewers.csv showing which chair (idCC) assigned which reviewer (idA)
-for index, row in Editor_reviewers.iterrows():
+for index, row in Chair_reviewers.iterrows():
     id_Chair = row['idCC']
-    id_Reviewer = row['idA']
+    id_Reviewer = row['idR']
     g.add((KG[id_Chair], KG.assigned, KG[id_Reviewer]))
 
 
